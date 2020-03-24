@@ -61,4 +61,4 @@ void GUITab::TextColor::set(Video::Color^ value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

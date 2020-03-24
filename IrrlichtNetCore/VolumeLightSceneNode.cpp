@@ -67,4 +67,4 @@ void VolumeLightSceneNode::TailColor::set(Video::Color^ value)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

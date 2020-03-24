@@ -46,4 +46,4 @@ void ParticleSphereEmitter::Radius::set(float value)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

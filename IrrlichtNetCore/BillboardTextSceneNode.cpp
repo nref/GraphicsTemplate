@@ -35,4 +35,4 @@ void BillboardTextSceneNode::SetTextColor(Video::Color^ color)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

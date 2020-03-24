@@ -1,8 +1,8 @@
-﻿using IrrlichtLime;
-using IrrlichtLime.Core;
-using IrrlichtLime.Video;
-using IrrlichtLime.Scene;
-using IrrlichtLime.GUI;
+﻿using IrrlichtNetCore;
+using IrrlichtNetCore.Core;
+using IrrlichtNetCore.Video;
+using IrrlichtNetCore.Scene;
+using IrrlichtNetCore.GUI;
 using System;
 using System.Windows.Input;
 using System.Windows;

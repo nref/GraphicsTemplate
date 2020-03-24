@@ -31,4 +31,4 @@ internal:
 };
 
 } // end namespace IO
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

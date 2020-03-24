@@ -26,4 +26,4 @@ namespace IO {
 	};
 
 } // end namespace IO
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

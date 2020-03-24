@@ -67,4 +67,4 @@ void GUIImage::ScaleImage::set(bool value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

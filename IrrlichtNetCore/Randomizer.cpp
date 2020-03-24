@@ -48,4 +48,4 @@ int Randomizer::MaxRandomInt::get()
 	return m_Randomizer->randMax();
 }
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

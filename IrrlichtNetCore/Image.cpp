@@ -364,4 +364,4 @@ String^ Image::ToString()
 }
 
 } // end namespace Video
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

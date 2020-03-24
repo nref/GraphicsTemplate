@@ -1896,4 +1896,4 @@ unsigned int VideoDriver::calculatePrimitiveCount(unsigned int indexCount, Scene
 }
 
 } // end namespace Video
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

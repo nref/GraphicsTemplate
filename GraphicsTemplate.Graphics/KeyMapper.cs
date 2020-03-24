@@ -1,4 +1,4 @@
-﻿using IrrlichtLime;
+﻿using IrrlichtNetCore;
 using System.Windows.Input;
 
 namespace GraphicsTemplate.Graphics

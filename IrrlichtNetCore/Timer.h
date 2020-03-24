@@ -67,4 +67,4 @@ internal:
 	irr::ITimer* m_Timer;
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

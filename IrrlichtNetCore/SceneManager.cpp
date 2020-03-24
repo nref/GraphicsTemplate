@@ -3262,4 +3262,4 @@ Video::VideoDriver^ SceneManager::VideoDriver::get()
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

@@ -25,4 +25,4 @@ GUISpriteBank::GUISpriteBank(gui::IGUISpriteBank* ref)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

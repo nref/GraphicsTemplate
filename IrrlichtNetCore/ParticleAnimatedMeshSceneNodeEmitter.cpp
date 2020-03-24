@@ -67,4 +67,4 @@ void ParticleAnimatedMeshSceneNodeEmitter::UseNormalDirection::set(bool value)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

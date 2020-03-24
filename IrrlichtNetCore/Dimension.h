@@ -37,4 +37,4 @@ namespace Core {
 #undef _REFCLASS_
 
 } // end namespace Core
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

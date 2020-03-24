@@ -78,4 +78,4 @@ GUIButton^ GUIWindow::MinimizeButton::get()
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

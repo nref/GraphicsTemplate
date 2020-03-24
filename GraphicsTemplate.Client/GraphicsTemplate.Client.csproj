@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y &quot;$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\Irrlicht.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;xcopy /Y &quot;$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\netcoreapp31\Ijwhost.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;" />
+    <Exec Command="xcopy /Y &quot;$(SolutionDir)IrrlichtNetCore\bin\$(PlatformName)\$(ConfigurationName)\Irrlicht.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;xcopy /Y &quot;$(SolutionDir)IrrlichtNetCore\bin\$(PlatformName)\$(ConfigurationName)\Ijwhost.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;" />
   </Target>
 
 </Project>

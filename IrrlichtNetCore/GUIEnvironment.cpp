@@ -1462,4 +1462,4 @@ Video::VideoDriver^ GUIEnvironment::VideoDriver::get()
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

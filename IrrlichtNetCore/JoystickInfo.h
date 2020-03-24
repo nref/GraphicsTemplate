@@ -75,4 +75,4 @@ internal:
 		, PovHat((PovHatPresence)copy.PovHat) {}
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

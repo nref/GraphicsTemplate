@@ -17,4 +17,4 @@ public:
 	}
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

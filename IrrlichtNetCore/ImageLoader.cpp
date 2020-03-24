@@ -47,4 +47,4 @@ Image^ ImageLoader::LoadImage(IO::ReadFile^ file)
 }
 
 } // end namespace Video
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

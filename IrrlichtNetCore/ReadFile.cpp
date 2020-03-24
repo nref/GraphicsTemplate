@@ -77,4 +77,4 @@ String^ ReadFile::ToString()
 }
 
 } // end namespace IO
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

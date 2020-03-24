@@ -67,4 +67,4 @@ AnimatedMeshType AnimatedMesh::MeshType::get()
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

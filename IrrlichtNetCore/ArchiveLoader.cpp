@@ -65,4 +65,4 @@ bool ArchiveLoader::IsALoadableFileFormat(FileArchiveType fileType)
 }
 
 } // end namespace IO
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

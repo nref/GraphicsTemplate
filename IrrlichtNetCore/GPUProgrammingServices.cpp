@@ -576,4 +576,4 @@ void GPUProgrammingServices::SetMaterial(Material^ material)
 }
 
 } // end namespace Video
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

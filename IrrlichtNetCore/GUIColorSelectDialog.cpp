@@ -24,4 +24,4 @@ GUIColorSelectDialog::GUIColorSelectDialog(gui::IGUIColorSelectDialog* ref)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

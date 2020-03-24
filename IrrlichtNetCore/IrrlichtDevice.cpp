@@ -390,4 +390,4 @@ bool IrrlichtDevice::Event(IrrlichtNetCore::Event^ e)
 	return OnEvent(e);
 }
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

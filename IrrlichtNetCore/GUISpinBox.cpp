@@ -99,4 +99,4 @@ void GUISpinBox::Value::set(float value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

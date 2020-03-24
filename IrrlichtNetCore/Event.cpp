@@ -280,4 +280,4 @@ String^ Event::ToString()
 	}
 }
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

@@ -66,4 +66,4 @@ internal:
 	irr::IReferenceCounted* m_ReferenceCounted;
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

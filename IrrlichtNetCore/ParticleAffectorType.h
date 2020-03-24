@@ -45,4 +45,4 @@ namespace Scene {
 	};
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

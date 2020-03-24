@@ -192,4 +192,4 @@ void GUIListBox::SelectedItem::set(String^ value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

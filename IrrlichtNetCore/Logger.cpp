@@ -59,4 +59,4 @@ String^ Logger::ToString()
 	return String::Format("Logger: LogLevel={0}", LogLevel);
 }
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

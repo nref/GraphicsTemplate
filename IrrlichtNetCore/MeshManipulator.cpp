@@ -364,4 +364,4 @@ void MeshManipulator::Transform(Mesh^ mesh, Matrix^ m)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

@@ -267,4 +267,4 @@ Vector3Df^ TerrainSceneNode::TerrainCenter::get()
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

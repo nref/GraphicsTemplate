@@ -120,4 +120,4 @@ internal:
 	EventReceiverInheritor* m_EventReceiverInheritor;
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

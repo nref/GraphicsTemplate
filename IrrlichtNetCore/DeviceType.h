@@ -66,4 +66,4 @@ namespace IrrlichtNetCore {
 		Best = EIDT_BEST
 	};
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

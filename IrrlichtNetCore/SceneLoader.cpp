@@ -56,4 +56,4 @@ bool SceneLoader::LoadScene(IO::ReadFile^ file)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

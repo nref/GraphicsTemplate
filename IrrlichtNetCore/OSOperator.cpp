@@ -69,4 +69,4 @@ String^ OSOperator::ToString()
 	return String::Format("OSOperator: OSVersion={0}", OSVersion);
 }
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

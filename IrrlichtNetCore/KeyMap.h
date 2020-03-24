@@ -85,4 +85,4 @@ private:
 	Dictionary<KeyAction, List<KeyCode>^>^ m_Map;
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

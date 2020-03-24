@@ -560,4 +560,4 @@ void SceneNode::initInheritor(SceneNodeInheritor* i)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

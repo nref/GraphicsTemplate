@@ -47,4 +47,4 @@ void ParticleRotationAffector::Speed::set(Vector3Df^ value)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

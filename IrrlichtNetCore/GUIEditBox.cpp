@@ -169,4 +169,4 @@ void GUIEditBox::WordWrap::set(bool value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

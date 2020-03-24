@@ -401,4 +401,4 @@ internal:
 	Event(const SEvent& other);
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

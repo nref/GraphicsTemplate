@@ -56,4 +56,4 @@ Dimension2Di^ GUIImageList::ImageSize::get()
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

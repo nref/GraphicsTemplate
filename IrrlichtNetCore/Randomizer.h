@@ -29,4 +29,4 @@ internal:
 	irr::IRandomizer* m_Randomizer;
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

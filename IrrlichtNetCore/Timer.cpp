@@ -99,4 +99,4 @@ String^ Timer::ToString()
 	return String::Format("Timer: {0}:{1:00}:{2:00}.{3:000}", hours, minutes, seconds, millisecs);
 }
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

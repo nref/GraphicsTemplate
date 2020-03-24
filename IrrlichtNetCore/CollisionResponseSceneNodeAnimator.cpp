@@ -126,4 +126,4 @@ void CollisionResponseSceneNodeAnimator::World::set(TriangleSelector^ value)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

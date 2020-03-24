@@ -34,4 +34,4 @@ void ShadowVolumeSceneNode::UpdateShadowVolumes()
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

@@ -154,4 +154,4 @@ void GUITabControl::TabVerticalAlignment::set(GUIAlignment value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

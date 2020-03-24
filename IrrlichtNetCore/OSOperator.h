@@ -29,4 +29,4 @@ internal:
 	irr::IOSOperator* m_OSOperator;
 };
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

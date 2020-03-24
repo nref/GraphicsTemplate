@@ -63,4 +63,4 @@ namespace IrrlichtNetCore {
 		User = EET_USER_EVENT
 	};
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

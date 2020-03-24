@@ -48,4 +48,4 @@ void DynamicMeshBuffer::VertexBuffer::set(Scene::VertexBuffer^ value)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

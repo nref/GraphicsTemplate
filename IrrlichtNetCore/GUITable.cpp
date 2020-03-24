@@ -224,4 +224,4 @@ void GUITable::SelectedRowIndex::set(int value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

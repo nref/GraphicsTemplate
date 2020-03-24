@@ -47,4 +47,4 @@ void ParticleGravityAffector::TimeForceLost::set(float value)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

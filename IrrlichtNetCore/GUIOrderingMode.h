@@ -31,4 +31,4 @@ namespace GUI {
 	};
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

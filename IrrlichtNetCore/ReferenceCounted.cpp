@@ -54,4 +54,4 @@ int ReferenceCounted::ReferenceCount::get()
 	return m_ReferenceCounted->getReferenceCount();
 }
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

@@ -37,4 +37,4 @@ String^ GUIFileOpenDialog::FileName::get()
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

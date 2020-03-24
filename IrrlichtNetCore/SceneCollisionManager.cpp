@@ -364,4 +364,4 @@ Vector2Di^ SceneCollisionManager::GetScreenCoordinatesFrom3DPosition(Vector3Df^ 
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

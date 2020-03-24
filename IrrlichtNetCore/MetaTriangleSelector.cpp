@@ -41,4 +41,4 @@ bool MetaTriangleSelector::RemoveTriangleSelector(TriangleSelector^ selector)
 }
 
 } // end namespace Scene
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

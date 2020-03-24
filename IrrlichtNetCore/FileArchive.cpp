@@ -64,4 +64,4 @@ FileArchiveType FileArchive::Type::get()
 }
 
 } // end namespace IO
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

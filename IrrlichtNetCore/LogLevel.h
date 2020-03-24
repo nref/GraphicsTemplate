@@ -41,4 +41,4 @@ namespace IrrlichtNetCore {
 		None = ELL_NONE
 	};
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

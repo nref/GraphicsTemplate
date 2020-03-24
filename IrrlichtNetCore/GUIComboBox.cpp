@@ -101,4 +101,4 @@ void GUIComboBox::SelectedIndex::set(int value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

@@ -106,4 +106,4 @@ String^ FileList::Path::get()
 }
 
 } // end namespace IO
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

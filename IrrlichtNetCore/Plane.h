@@ -317,4 +317,4 @@ internal:
 };
 
 } // end namespace Core
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

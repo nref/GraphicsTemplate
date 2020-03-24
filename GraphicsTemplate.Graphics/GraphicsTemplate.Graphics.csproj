@@ -9,23 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <Reference Include="IrrlichtLime">
-      <HintPath>..\lib\x64\Debug\netcoreapp31\IrrlichtLime.dll</HintPath>
+    <Reference Include="IrrlichtNetCore">
+      <HintPath>..\IrrlichtNetCore\bin\x64\Debug\IrrlichtNetCore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <Reference Include="IrrlichtLime">
-      <HintPath>..\lib\x64\Release\netcoreapp31\IrrlichtLime.dll</HintPath>
+    <Reference Include="IrrlichtNetCore">
+      <HintPath>..\IrrlichtNetCore\bin\x64\Release\IrrlichtNetCore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <Reference Include="IrrlichtLime">
-      <HintPath>..\lib\x86\Debug\netcoreapp31\IrrlichtLime.dll</HintPath>
+    <Reference Include="IrrlichtNetCore">
+      <HintPath>..\IrrlichtNetCore\bin\x86\Debug\IrrlichtNetCore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <Reference Include="IrrlichtLime">
-      <HintPath>..\lib\x86\Release\netcoreapp31\IrrlichtLime.dll</HintPath>
+    <Reference Include="IrrlichtNetCore">
+      <HintPath>..\IrrlichtNetCore\bin\x86\Release\IrrlichtNetCore.dll</HintPath>
     </Reference>
   </ItemGroup>
 

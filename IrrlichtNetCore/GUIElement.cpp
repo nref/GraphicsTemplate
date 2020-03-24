@@ -516,4 +516,4 @@ void GUIElement::initInheritor(GUIElementInheritor* i)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

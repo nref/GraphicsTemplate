@@ -49,4 +49,4 @@ void GUIMeshViewer::Mesh::set(Scene::AnimatedMesh^ value)
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

@@ -90,4 +90,4 @@ namespace IrrlichtNetCore {
 		MiddleTripleClick = EMIE_MMOUSE_TRIPLE_CLICK
 	};
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

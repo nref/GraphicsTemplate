@@ -128,4 +128,4 @@ namespace IrrlichtNetCore {
 		Lime() {}
 	};
 
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

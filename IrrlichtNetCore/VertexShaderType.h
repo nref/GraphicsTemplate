@@ -51,4 +51,4 @@ namespace Video {
 	};
 
 } // end namespace Video
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore

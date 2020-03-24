@@ -77,4 +77,4 @@ String^ CursorControl::ToString()
 }
 
 } // end namespace GUI
-} // end namespace IrrlichtLime
+} // end namespace IrrlichtNetCore
