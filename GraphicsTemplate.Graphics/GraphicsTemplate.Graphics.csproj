@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>x64;x86</Platforms>
+    <AssemblyName>GraphicsTemplate.Graphics</AssemblyName>
+    <RootNamespace>GraphicsTemplate.Graphics</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Reference Include="IrrlichtLime">
+      <HintPath>..\lib\x64\Debug\netcoreapp31\IrrlichtLime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Reference Include="IrrlichtLime">
+      <HintPath>..\lib\x64\Release\netcoreapp31\IrrlichtLime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <Reference Include="IrrlichtLime">
+      <HintPath>..\lib\x86\Debug\netcoreapp31\IrrlichtLime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <Reference Include="IrrlichtLime">
+      <HintPath>..\lib\x86\Release\netcoreapp31\IrrlichtLime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
