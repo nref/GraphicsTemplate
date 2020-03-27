@@ -13,20 +13,20 @@ public ref class GUIInOutFader : GUIElement
 {
 public:
 
-	void FadeIn(unsigned int time);
-	void FadeOut(unsigned int time);
+    void FadeIn(unsigned int time);
+    void FadeOut(unsigned int time);
 
-	void SetColor(Video::Color^ source, Video::Color^ dest);
-	void SetColor(Video::Color^ bothAplhaIgnored);
+    void SetColor(Video::Color^ source, Video::Color^ dest);
+    void SetColor(Video::Color^ bothAplhaIgnored);
 
-	property bool Ready { bool get(); }
+    property bool Ready { bool get(); }
 
 internal:
 
-	static GUIInOutFader^ Wrap(gui::IGUIInOutFader* ref);
-	GUIInOutFader(gui::IGUIInOutFader* ref);
+    static GUIInOutFader^ Wrap(gui::IGUIInOutFader* ref);
+    GUIInOutFader(gui::IGUIInOutFader* ref);
 
-	gui::IGUIInOutFader* m_GUIInOutFader;
+    gui::IGUIInOutFader* m_GUIInOutFader;
 };
 
 } // end namespace GUI

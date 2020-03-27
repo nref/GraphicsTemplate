@@ -10,47 +10,47 @@ namespace GUI {
 
 GUICheckBox^ GUICheckBox::Wrap(gui::IGUICheckBox* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew GUICheckBox(ref);
+    return gcnew GUICheckBox(ref);
 }
 
 GUICheckBox::GUICheckBox(gui::IGUICheckBox* ref)
-	: GUIElement(ref)
+    : GUIElement(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_GUICheckBox = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_GUICheckBox = ref;
 }
 
 bool GUICheckBox::Checked::get()
 {
-	return m_GUICheckBox->isChecked();
+    return m_GUICheckBox->isChecked();
 }
 
 void GUICheckBox::Checked::set(bool value)
 {
-	m_GUICheckBox->setChecked(value);
+    m_GUICheckBox->setChecked(value);
 }
 
 bool GUICheckBox::DrawBackground::get()
 {
-	return m_GUICheckBox->isDrawBackgroundEnabled();
+    return m_GUICheckBox->isDrawBackgroundEnabled();
 }
 
 void GUICheckBox::DrawBackground::set(bool value)
 {
-	m_GUICheckBox->setDrawBackground(value);
+    m_GUICheckBox->setDrawBackground(value);
 }
 
 bool GUICheckBox::DrawBorder::get()
 {
-	return m_GUICheckBox->isDrawBorderEnabled();
+    return m_GUICheckBox->isDrawBorderEnabled();
 }
 
 void GUICheckBox::DrawBorder::set(bool value)
 {
-	m_GUICheckBox->setDrawBorder(value);
+    m_GUICheckBox->setDrawBorder(value);
 }
 
 } // end namespace GUI

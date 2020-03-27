@@ -13,17 +13,17 @@ public ref class CameraMayaSceneNodeAnimator : SceneNodeAnimator
 {
 public:
 
-	property float Distance { float get(); void set(float value); }
-	property float MoveSpeed { float get(); void set(float value); }
-	property float RotateSpeed { float get(); void set(float value); }
-	property float ZoomSpeed { float get(); void set(float value); }
+    property float Distance { float get(); void set(float value); }
+    property float MoveSpeed { float get(); void set(float value); }
+    property float RotateSpeed { float get(); void set(float value); }
+    property float ZoomSpeed { float get(); void set(float value); }
 
 internal:
 
-	static CameraMayaSceneNodeAnimator^ Wrap(scene::ISceneNodeAnimatorCameraMaya* ref);
-	CameraMayaSceneNodeAnimator(scene::ISceneNodeAnimatorCameraMaya* ref);
+    static CameraMayaSceneNodeAnimator^ Wrap(scene::ISceneNodeAnimatorCameraMaya* ref);
+    CameraMayaSceneNodeAnimator(scene::ISceneNodeAnimatorCameraMaya* ref);
 
-	scene::ISceneNodeAnimatorCameraMaya* m_CameraMayaSceneNodeAnimator;
+    scene::ISceneNodeAnimatorCameraMaya* m_CameraMayaSceneNodeAnimator;
 };
 
 } // end namespace Scene

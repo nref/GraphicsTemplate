@@ -1,4 +1,6 @@
-﻿using GraphicsTemplate.Graphics;
+﻿using GraphicsTemplate.Irrlicht;
+using GraphicsTemplate.Shared;
+using GraphicsTemplate.Urho;
 using Stylet;
 using StyletIoC;
 
@@ -14,7 +16,8 @@ namespace GraphicsTemplate.Client
         protected override void ConfigureIoC(IStyletIoCBuilder builder)
         {
             builder.Bind<IGraphicsViewModel>().To<GraphicsViewModel>().InSingletonScope();
-            builder.Bind<IGraphicsService>().To<GraphicsService>().InSingletonScope();
+            builder.Bind<IGraphicsService>().To<IrrlichtGraphicsService>().InSingletonScope();
+            //builder.Bind<IGraphicsService>().To<UrhoGraphicsSevice>().InSingletonScope();
         }
 
         protected override void Configure()

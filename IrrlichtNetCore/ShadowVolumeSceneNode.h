@@ -15,15 +15,15 @@ public ref class ShadowVolumeSceneNode : SceneNode
 {
 public:
 
-	void SetShadowMesh(Mesh^ mesh);
-	void UpdateShadowVolumes();
+    void SetShadowMesh(Mesh^ mesh);
+    void UpdateShadowVolumes();
 
 internal:
 
-	static ShadowVolumeSceneNode^ Wrap(scene::IShadowVolumeSceneNode* ref);
-	ShadowVolumeSceneNode(scene::IShadowVolumeSceneNode* ref);
+    static ShadowVolumeSceneNode^ Wrap(scene::IShadowVolumeSceneNode* ref);
+    ShadowVolumeSceneNode(scene::IShadowVolumeSceneNode* ref);
 
-	scene::IShadowVolumeSceneNode* m_ShadowVolumeSceneNode;
+    scene::IShadowVolumeSceneNode* m_ShadowVolumeSceneNode;
 };
 
 } // end namespace Scene

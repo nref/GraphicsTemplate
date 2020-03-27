@@ -16,17 +16,17 @@ public ref class ParticleMeshEmitter : ParticleEmitter
 {
 public:
 
-	property bool EveryMeshVertex { bool get(); void set(bool value); }
-	property Mesh^ ParticleMesh { Mesh^ get(); void set(Mesh^ value); }
-	property float NormalDirectionModifier { float get(); void set(float value); }
-	property bool UseNormalDirection { bool get(); void set(bool value); }
+    property bool EveryMeshVertex { bool get(); void set(bool value); }
+    property Mesh^ ParticleMesh { Mesh^ get(); void set(Mesh^ value); }
+    property float NormalDirectionModifier { float get(); void set(float value); }
+    property bool UseNormalDirection { bool get(); void set(bool value); }
 
 internal:
 
-	static ParticleMeshEmitter^ Wrap(scene::IParticleMeshEmitter* ref);
-	ParticleMeshEmitter(scene::IParticleMeshEmitter* ref);
+    static ParticleMeshEmitter^ Wrap(scene::IParticleMeshEmitter* ref);
+    ParticleMeshEmitter(scene::IParticleMeshEmitter* ref);
 
-	scene::IParticleMeshEmitter* m_ParticleMeshEmitter;
+    scene::IParticleMeshEmitter* m_ParticleMeshEmitter;
 };
 
 } // end namespace Scene

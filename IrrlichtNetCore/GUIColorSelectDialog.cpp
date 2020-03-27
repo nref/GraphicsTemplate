@@ -10,17 +10,17 @@ namespace GUI {
 
 GUIColorSelectDialog^ GUIColorSelectDialog::Wrap(gui::IGUIColorSelectDialog* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew GUIColorSelectDialog(ref);
+    return gcnew GUIColorSelectDialog(ref);
 }
 
 GUIColorSelectDialog::GUIColorSelectDialog(gui::IGUIColorSelectDialog* ref)
-	: GUIElement(ref)
+    : GUIElement(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_GUIColorSelectDialog = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_GUIColorSelectDialog = ref;
 }
 
 } // end namespace GUI

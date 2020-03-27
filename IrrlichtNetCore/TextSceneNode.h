@@ -13,15 +13,15 @@ public ref class TextSceneNode : SceneNode
 {
 public:
 
-	void SetText(String^ text);
-	void SetTextColor(Video::Color^ color);
+    void SetText(String^ text);
+    void SetTextColor(Video::Color^ color);
 
 internal:
 
-	static TextSceneNode^ Wrap(scene::ITextSceneNode* ref);
-	TextSceneNode(scene::ITextSceneNode* ref);
+    static TextSceneNode^ Wrap(scene::ITextSceneNode* ref);
+    TextSceneNode(scene::ITextSceneNode* ref);
 
-	scene::ITextSceneNode* m_TextSceneNode;
+    scene::ITextSceneNode* m_TextSceneNode;
 };
 
 } // end namespace Scene

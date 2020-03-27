@@ -16,21 +16,21 @@ public ref class MeshSceneNode : SceneNode
 {
 public:
 
-	ShadowVolumeSceneNode^ AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id, bool zfailmethod, float infinity);
-	ShadowVolumeSceneNode^ AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id, bool zfailmethod);
-	ShadowVolumeSceneNode^ AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id);
-	ShadowVolumeSceneNode^ AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh);
-	ShadowVolumeSceneNode^ AddShadowVolumeSceneNode();
+    ShadowVolumeSceneNode^ AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id, bool zfailmethod, float infinity);
+    ShadowVolumeSceneNode^ AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id, bool zfailmethod);
+    ShadowVolumeSceneNode^ AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id);
+    ShadowVolumeSceneNode^ AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh);
+    ShadowVolumeSceneNode^ AddShadowVolumeSceneNode();
 
-	property Scene::Mesh^ Mesh { Scene::Mesh^ get(); void set(Scene::Mesh^ value); }
-	property bool ReadOnlyMeterials { bool get(); void set(bool value); }
+    property Scene::Mesh^ Mesh { Scene::Mesh^ get(); void set(Scene::Mesh^ value); }
+    property bool ReadOnlyMeterials { bool get(); void set(bool value); }
 
 internal:
 
-	static MeshSceneNode^ Wrap(scene::IMeshSceneNode* ref);
-	MeshSceneNode(scene::IMeshSceneNode* ref);
+    static MeshSceneNode^ Wrap(scene::IMeshSceneNode* ref);
+    MeshSceneNode(scene::IMeshSceneNode* ref);
 
-	scene::IMeshSceneNode* m_MeshSceneNode;
+    scene::IMeshSceneNode* m_MeshSceneNode;
 };
 
 } // end namespace Scene

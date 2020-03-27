@@ -8,21 +8,21 @@ using namespace System;
 namespace IrrlichtNetCore {
 namespace Scene {
 
-	/// <summary>
-	/// Enumeration for different bone skinning spaces.
-	/// </summary>
-	public enum class BoneSkinningSpace
-	{
-		/// <summary>
-		/// Local skinning, standard.
-		/// </summary>
-		Local = EBSS_LOCAL,
+    /// <summary>
+    /// Enumeration for different bone skinning spaces.
+    /// </summary>
+    public enum class BoneSkinningSpace
+    {
+        /// <summary>
+        /// Local skinning, standard.
+        /// </summary>
+        Local = EBSS_LOCAL,
 
-		/// <summary>
-		/// Global skinning.
-		/// </summary>
-		Global = EBSS_GLOBAL
-	};
+        /// <summary>
+        /// Global skinning.
+        /// </summary>
+        Global = EBSS_GLOBAL
+    };
 
 } // end namespace Scene
 } // end namespace IrrlichtNetCore

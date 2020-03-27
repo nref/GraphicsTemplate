@@ -13,55 +13,55 @@ namespace IO {
 
 ArchiveLoader^ ArchiveLoader::Wrap(io::IArchiveLoader* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew ArchiveLoader(ref);
+    return gcnew ArchiveLoader(ref);
 }
 
 ArchiveLoader::ArchiveLoader(io::IArchiveLoader* ref)
-	: ReferenceCounted(ref)
+    : ReferenceCounted(ref)
 {
-	m_ArchiveLoader = ref;
+    m_ArchiveLoader = ref;
 }
 
 FileArchive^ ArchiveLoader::CreateArchive(String^ filename, bool ignoreCase, bool ignorePaths)
 {
-	LIME_ASSERT(filename != nullptr);
+    LIME_ASSERT(filename != nullptr);
 
-	io::IFileArchive* a = m_ArchiveLoader->createArchive(
-		Lime::StringToPath(filename),
-		ignoreCase,
-		ignorePaths);
+    io::IFileArchive* a = m_ArchiveLoader->createArchive(
+        Lime::StringToPath(filename),
+        ignoreCase,
+        ignorePaths);
 
-	return FileArchive::Wrap(a);
+    return FileArchive::Wrap(a);
 }
 
 FileArchive^ ArchiveLoader::CreateArchive(ReadFile^ file, bool ignoreCase, bool ignorePaths)
 {
-	LIME_ASSERT(file != nullptr);
+    LIME_ASSERT(file != nullptr);
 
-	io::IFileArchive* a = m_ArchiveLoader->createArchive(file->m_ReadFile, ignoreCase, ignorePaths);
-	return FileArchive::Wrap(a);
+    io::IFileArchive* a = m_ArchiveLoader->createArchive(file->m_ReadFile, ignoreCase, ignorePaths);
+    return FileArchive::Wrap(a);
 }
 
 bool ArchiveLoader::IsALoadableFileFormat(String^ filename)
 {
-	LIME_ASSERT(filename != nullptr);
+    LIME_ASSERT(filename != nullptr);
 
-	return m_ArchiveLoader->isALoadableFileFormat(
-		Lime::StringToPath(filename));
+    return m_ArchiveLoader->isALoadableFileFormat(
+        Lime::StringToPath(filename));
 }
 
 bool ArchiveLoader::IsALoadableFileFormat(ReadFile^ file)
 {
-	LIME_ASSERT(file != nullptr);
-	return m_ArchiveLoader->isALoadableFileFormat(file->m_ReadFile);
+    LIME_ASSERT(file != nullptr);
+    return m_ArchiveLoader->isALoadableFileFormat(file->m_ReadFile);
 }
 
 bool ArchiveLoader::IsALoadableFileFormat(FileArchiveType fileType)
 {
-	return m_ArchiveLoader->isALoadableFileFormat((io::E_FILE_ARCHIVE_TYPE)fileType);
+    return m_ArchiveLoader->isALoadableFileFormat((io::E_FILE_ARCHIVE_TYPE)fileType);
 }
 
 } // end namespace IO

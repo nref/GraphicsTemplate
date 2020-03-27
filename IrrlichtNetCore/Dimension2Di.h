@@ -11,12 +11,12 @@ public ref class _REFCLASS_ : Lime::NativeValue<_WRAPCLASS_>
 
 internal:
 
-	_REFCLASS_(const core::dimension2du& value)
-		: Lime::NativeValue<_WRAPCLASS_>(true)
-	{
-		LIME_ASSERT(value.Width <= 0x7fffffff);
-		LIME_ASSERT(value.Height <= 0x7fffffff);
+    _REFCLASS_(const core::dimension2du& value)
+        : Lime::NativeValue<_WRAPCLASS_>(true)
+    {
+        LIME_ASSERT(value.Width <= 0x7fffffff);
+        LIME_ASSERT(value.Height <= 0x7fffffff);
 
-		m_NativeValue = new _WRAPCLASS_((_WRAPCLASS_&)value);
-	}
+        m_NativeValue = new _WRAPCLASS_((_WRAPCLASS_&)value);
+    }
 };

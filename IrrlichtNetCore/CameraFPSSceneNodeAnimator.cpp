@@ -9,61 +9,61 @@ namespace Scene {
 
 CameraFPSSceneNodeAnimator^ CameraFPSSceneNodeAnimator::Wrap(scene::ISceneNodeAnimatorCameraFPS* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew CameraFPSSceneNodeAnimator(ref);
+    return gcnew CameraFPSSceneNodeAnimator(ref);
 }
 
 CameraFPSSceneNodeAnimator::CameraFPSSceneNodeAnimator(scene::ISceneNodeAnimatorCameraFPS* ref)
-	: SceneNodeAnimator(ref)
+    : SceneNodeAnimator(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_CameraFPSSceneNodeAnimator = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_CameraFPSSceneNodeAnimator = ref;
 }
 
 void CameraFPSSceneNodeAnimator::SetInvertMouse(bool invert)
 {
-	m_CameraFPSSceneNodeAnimator->setInvertMouse(invert);
+    m_CameraFPSSceneNodeAnimator->setInvertMouse(invert);
 }
 
 void CameraFPSSceneNodeAnimator::SetVerticalMovement(bool allow)
 {
-	m_CameraFPSSceneNodeAnimator->setVerticalMovement(allow);
+    m_CameraFPSSceneNodeAnimator->setVerticalMovement(allow);
 }
 
 IrrlichtNetCore::KeyMap^ CameraFPSSceneNodeAnimator::KeyMap::get()
 {
-	const core::array<SKeyMap>& m = m_CameraFPSSceneNodeAnimator->getKeyMap();
-	return gcnew IrrlichtNetCore::KeyMap(m);
+    const core::array<SKeyMap>& m = m_CameraFPSSceneNodeAnimator->getKeyMap();
+    return gcnew IrrlichtNetCore::KeyMap(m);
 }
 
 void CameraFPSSceneNodeAnimator::KeyMap::set(IrrlichtNetCore::KeyMap^ value)
 {
-	LIME_ASSERT(value != nullptr);
+    LIME_ASSERT(value != nullptr);
 
-	core::array<SKeyMap> m = value->GetSKeyMapArray();
-	m_CameraFPSSceneNodeAnimator->setKeyMap(m);
+    core::array<SKeyMap> m = value->GetSKeyMapArray();
+    m_CameraFPSSceneNodeAnimator->setKeyMap(m);
 }
 
 float CameraFPSSceneNodeAnimator::MoveSpeed::get()
 {
-	return m_CameraFPSSceneNodeAnimator->getMoveSpeed();
+    return m_CameraFPSSceneNodeAnimator->getMoveSpeed();
 }
 
 void CameraFPSSceneNodeAnimator::MoveSpeed::set(float value)
 {
-	m_CameraFPSSceneNodeAnimator->setMoveSpeed(value);
+    m_CameraFPSSceneNodeAnimator->setMoveSpeed(value);
 }
 
 float CameraFPSSceneNodeAnimator::RotateSpeed::get()
 {
-	return m_CameraFPSSceneNodeAnimator->getRotateSpeed();
+    return m_CameraFPSSceneNodeAnimator->getRotateSpeed();
 }
 
 void CameraFPSSceneNodeAnimator::RotateSpeed::set(float value)
 {
-	m_CameraFPSSceneNodeAnimator->setRotateSpeed(value);
+    m_CameraFPSSceneNodeAnimator->setRotateSpeed(value);
 }
 
 } // end namespace Scene

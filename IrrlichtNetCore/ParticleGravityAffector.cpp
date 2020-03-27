@@ -11,39 +11,39 @@ namespace Scene {
 
 ParticleGravityAffector^ ParticleGravityAffector::Wrap(scene::IParticleGravityAffector* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew ParticleGravityAffector(ref);
+    return gcnew ParticleGravityAffector(ref);
 }
 
 ParticleGravityAffector::ParticleGravityAffector(scene::IParticleGravityAffector* ref)
-	: ParticleAffector(ref)
+    : ParticleAffector(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_ParticleGravityAffector = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_ParticleGravityAffector = ref;
 }
 
 Vector3Df^ ParticleGravityAffector::Gravity::get()
 {
-	return gcnew Vector3Df(m_ParticleGravityAffector->getGravity());
+    return gcnew Vector3Df(m_ParticleGravityAffector->getGravity());
 }
 
 void ParticleGravityAffector::Gravity::set(Vector3Df^ value)
 {
-	LIME_ASSERT(value != nullptr);
-	m_ParticleGravityAffector->setGravity(*value->m_NativeValue);
+    LIME_ASSERT(value != nullptr);
+    m_ParticleGravityAffector->setGravity(*value->m_NativeValue);
 }
 
 float ParticleGravityAffector::TimeForceLost::get()
 {
-	return m_ParticleGravityAffector->getTimeForceLost();
+    return m_ParticleGravityAffector->getTimeForceLost();
 }
 
 void ParticleGravityAffector::TimeForceLost::set(float value)
 {
-	LIME_ASSERT(value >= 0.0f);
-	m_ParticleGravityAffector->setTimeForceLost(value);
+    LIME_ASSERT(value >= 0.0f);
+    m_ParticleGravityAffector->setTimeForceLost(value);
 }
 
 } // end namespace Scene

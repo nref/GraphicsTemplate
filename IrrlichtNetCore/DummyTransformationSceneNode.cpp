@@ -10,22 +10,22 @@ namespace Scene {
 
 DummyTransformationSceneNode^ DummyTransformationSceneNode::Wrap(scene::IDummyTransformationSceneNode* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew DummyTransformationSceneNode(ref);
+    return gcnew DummyTransformationSceneNode(ref);
 }
 
 DummyTransformationSceneNode::DummyTransformationSceneNode(scene::IDummyTransformationSceneNode* ref)
-	: SceneNode(ref)
+    : SceneNode(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_DummyTransformationSceneNode = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_DummyTransformationSceneNode = ref;
 }
 
 Matrix^ DummyTransformationSceneNode::RelativeTransformationMatrix::get()
 {
-	return gcnew Matrix(&m_DummyTransformationSceneNode->getRelativeTransformationMatrix());
+    return gcnew Matrix(&m_DummyTransformationSceneNode->getRelativeTransformationMatrix());
 }
 
 } // end namespace Scene

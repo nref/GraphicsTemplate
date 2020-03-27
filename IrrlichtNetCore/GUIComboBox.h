@@ -13,29 +13,29 @@ public ref class GUIComboBox : GUIElement
 {
 public:
 
-	int AddItem(String^ text, int data);
-	int AddItem(String^ text);
+    int AddItem(String^ text, int data);
+    int AddItem(String^ text);
 
-	void Clear();
+    void Clear();
 
-	int GetIndexForItemData(int data);
-	String^ GetItem(int index);
-	int GetItemData(int index);
+    int GetIndexForItemData(int data);
+    String^ GetItem(int index);
+    int GetItemData(int index);
 
-	void RemoveItem(int index);
+    void RemoveItem(int index);
 
-	void SetTextAlignment(GUIAlignment horizontal, GUIAlignment vertical);
+    void SetTextAlignment(GUIAlignment horizontal, GUIAlignment vertical);
 
-	property int ItemCount { int get(); }
-	property int MaxSelectionRows { int get(); void set(int value); }
-	property int SelectedIndex { int get(); void set(int value); }
+    property int ItemCount { int get(); }
+    property int MaxSelectionRows { int get(); void set(int value); }
+    property int SelectedIndex { int get(); void set(int value); }
 
 internal:
 
-	static GUIComboBox^ Wrap(gui::IGUIComboBox* ref);
-	GUIComboBox(gui::IGUIComboBox* ref);
+    static GUIComboBox^ Wrap(gui::IGUIComboBox* ref);
+    GUIComboBox(gui::IGUIComboBox* ref);
 
-	gui::IGUIComboBox* m_GUIComboBox;
+    gui::IGUIComboBox* m_GUIComboBox;
 };
 
 } // end namespace GUI

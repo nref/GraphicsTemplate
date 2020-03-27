@@ -16,15 +16,15 @@ public ref class DynamicMeshBuffer : MeshBuffer
 {
 public:
 
-	property Scene::IndexBuffer^ IndexBuffer { Scene::IndexBuffer^ get(); void set(Scene::IndexBuffer^ value); }
-	property Scene::VertexBuffer^ VertexBuffer { Scene::VertexBuffer^ get(); void set(Scene::VertexBuffer^ value); }
+    property Scene::IndexBuffer^ IndexBuffer { Scene::IndexBuffer^ get(); void set(Scene::IndexBuffer^ value); }
+    property Scene::VertexBuffer^ VertexBuffer { Scene::VertexBuffer^ get(); void set(Scene::VertexBuffer^ value); }
 
 internal:
 
-	static DynamicMeshBuffer^ Wrap(scene::IDynamicMeshBuffer* ref);
-	DynamicMeshBuffer(scene::IDynamicMeshBuffer* ref);
+    static DynamicMeshBuffer^ Wrap(scene::IDynamicMeshBuffer* ref);
+    DynamicMeshBuffer(scene::IDynamicMeshBuffer* ref);
 
-	scene::IDynamicMeshBuffer* m_DynamicMeshBuffer;
+    scene::IDynamicMeshBuffer* m_DynamicMeshBuffer;
 };
 
 } // end namespace Scene

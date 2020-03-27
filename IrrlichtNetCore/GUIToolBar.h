@@ -16,21 +16,21 @@ public ref class GUIToolBar : GUIElement
 {
 public:
 
-	GUIButton^ AddButton(int id, String^ text, String^ toolTipText, Video::Texture^ img, Video::Texture^ pressedImg, bool isPushButton, bool useAlphaChannel);
-	GUIButton^ AddButton(int id, String^ text, String^ toolTipText, Video::Texture^ img, Video::Texture^ pressedImg, bool isPushButton);
-	GUIButton^ AddButton(int id, String^ text, String^ toolTipText, Video::Texture^ img, Video::Texture^ pressedImg);
-	GUIButton^ AddButton(int id, String^ text, String^ toolTipText, Video::Texture^ img);
-	GUIButton^ AddButton(int id, String^ text, String^ toolTipText);
-	GUIButton^ AddButton(int id, String^ text);
-	GUIButton^ AddButton(int id);
-	GUIButton^ AddButton();
+    GUIButton^ AddButton(int id, String^ text, String^ toolTipText, Video::Texture^ img, Video::Texture^ pressedImg, bool isPushButton, bool useAlphaChannel);
+    GUIButton^ AddButton(int id, String^ text, String^ toolTipText, Video::Texture^ img, Video::Texture^ pressedImg, bool isPushButton);
+    GUIButton^ AddButton(int id, String^ text, String^ toolTipText, Video::Texture^ img, Video::Texture^ pressedImg);
+    GUIButton^ AddButton(int id, String^ text, String^ toolTipText, Video::Texture^ img);
+    GUIButton^ AddButton(int id, String^ text, String^ toolTipText);
+    GUIButton^ AddButton(int id, String^ text);
+    GUIButton^ AddButton(int id);
+    GUIButton^ AddButton();
 
 internal:
 
-	static GUIToolBar^ Wrap(gui::IGUIToolBar* ref);
-	GUIToolBar(gui::IGUIToolBar* ref);
+    static GUIToolBar^ Wrap(gui::IGUIToolBar* ref);
+    GUIToolBar(gui::IGUIToolBar* ref);
 
-	gui::IGUIToolBar* m_GUIToolBar;
+    gui::IGUIToolBar* m_GUIToolBar;
 };
 
 } // end namespace GUI

@@ -15,204 +15,204 @@ namespace Scene {
 
 AnimatedMeshSceneNode^ AnimatedMeshSceneNode::Wrap(scene::IAnimatedMeshSceneNode* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew AnimatedMeshSceneNode(ref);
+    return gcnew AnimatedMeshSceneNode(ref);
 }
 
 AnimatedMeshSceneNode::AnimatedMeshSceneNode(scene::IAnimatedMeshSceneNode* ref)
-	: SceneNode(ref)
+    : SceneNode(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_AnimatedMeshSceneNode = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_AnimatedMeshSceneNode = ref;
 }
 
 ShadowVolumeSceneNode^ AnimatedMeshSceneNode::AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id, bool zfailmethod, float infinity)
 {
-	scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode(
-		LIME_SAFEREF(shadowMesh, m_Mesh),
-		id,
-		zfailmethod,
-		infinity);
+    scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode(
+        LIME_SAFEREF(shadowMesh, m_Mesh),
+        id,
+        zfailmethod,
+        infinity);
 
-	return ShadowVolumeSceneNode::Wrap(n);
+    return ShadowVolumeSceneNode::Wrap(n);
 }
 
 ShadowVolumeSceneNode^ AnimatedMeshSceneNode::AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id, bool zfailmethod)
 {
-	scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode(
-		LIME_SAFEREF(shadowMesh, m_Mesh),
-		id,
-		zfailmethod);
+    scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode(
+        LIME_SAFEREF(shadowMesh, m_Mesh),
+        id,
+        zfailmethod);
 
-	return ShadowVolumeSceneNode::Wrap(n);
+    return ShadowVolumeSceneNode::Wrap(n);
 }
 
 ShadowVolumeSceneNode^ AnimatedMeshSceneNode::AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh, int id)
 {
-	scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode(
-		LIME_SAFEREF(shadowMesh, m_Mesh),
-		id);
+    scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode(
+        LIME_SAFEREF(shadowMesh, m_Mesh),
+        id);
 
-	return ShadowVolumeSceneNode::Wrap(n);
+    return ShadowVolumeSceneNode::Wrap(n);
 }
 
 ShadowVolumeSceneNode^ AnimatedMeshSceneNode::AddShadowVolumeSceneNode(Scene::Mesh^ shadowMesh)
 {
-	scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode(
-		LIME_SAFEREF(shadowMesh, m_Mesh));
+    scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode(
+        LIME_SAFEREF(shadowMesh, m_Mesh));
 
-	return ShadowVolumeSceneNode::Wrap(n);
+    return ShadowVolumeSceneNode::Wrap(n);
 }
 
 ShadowVolumeSceneNode^ AnimatedMeshSceneNode::AddShadowVolumeSceneNode()
 {
-	scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode();
-	return ShadowVolumeSceneNode::Wrap(n);
+    scene::IShadowVolumeSceneNode* n = m_AnimatedMeshSceneNode->addShadowVolumeSceneNode();
+    return ShadowVolumeSceneNode::Wrap(n);
 }
 
 void AnimatedMeshSceneNode::AnimateJoints(bool calculateAbsolutePositions)
 {
-	m_AnimatedMeshSceneNode->animateJoints(calculateAbsolutePositions);
+    m_AnimatedMeshSceneNode->animateJoints(calculateAbsolutePositions);
 }
 
 void AnimatedMeshSceneNode::AnimateJoints()
 {
-	m_AnimatedMeshSceneNode->animateJoints();
+    m_AnimatedMeshSceneNode->animateJoints();
 }
 
 SceneNode^ AnimatedMeshSceneNode::Clone(SceneNode^ newParent, Scene::SceneManager^ newManager)
 {
-	scene::ISceneNode* n = m_AnimatedMeshSceneNode->clone(
-		LIME_SAFEREF(newParent, m_SceneNode),
-		LIME_SAFEREF(newManager, m_SceneManager));
+    scene::ISceneNode* n = m_AnimatedMeshSceneNode->clone(
+        LIME_SAFEREF(newParent, m_SceneNode),
+        LIME_SAFEREF(newManager, m_SceneManager));
 
-	return SceneNode::Wrap(n);
+    return SceneNode::Wrap(n);
 }
 
 SceneNode^ AnimatedMeshSceneNode::Clone(SceneNode^ newParent)
 {
-	scene::ISceneNode* n = m_AnimatedMeshSceneNode->clone(
-		LIME_SAFEREF(newParent, m_SceneNode));
+    scene::ISceneNode* n = m_AnimatedMeshSceneNode->clone(
+        LIME_SAFEREF(newParent, m_SceneNode));
 
-	return SceneNode::Wrap(n);
+    return SceneNode::Wrap(n);
 }
 
 SceneNode^ AnimatedMeshSceneNode::Clone()
 {
-	scene::ISceneNode* n = m_AnimatedMeshSceneNode->clone();
-	return SceneNode::Wrap(n);
+    scene::ISceneNode* n = m_AnimatedMeshSceneNode->clone();
+    return SceneNode::Wrap(n);
 }
 
 BoneSceneNode^ AnimatedMeshSceneNode::GetJointNode(int jointIndex)
 {
-	LIME_ASSERT(jointIndex >= 0 && jointIndex < JointCount);
+    LIME_ASSERT(jointIndex >= 0 && jointIndex < JointCount);
 
-	scene::IBoneSceneNode* n = m_AnimatedMeshSceneNode->getJointNode(jointIndex);
-	return BoneSceneNode::Wrap(n);
+    scene::IBoneSceneNode* n = m_AnimatedMeshSceneNode->getJointNode(jointIndex);
+    return BoneSceneNode::Wrap(n);
 }
 
 BoneSceneNode^ AnimatedMeshSceneNode::GetJointNode(String^ jointName)
 {
-	scene::IBoneSceneNode* n = m_AnimatedMeshSceneNode->getJointNode(LIME_SAFESTRINGTOSTRINGC_C_STR(jointName));
-	return BoneSceneNode::Wrap(n);
+    scene::IBoneSceneNode* n = m_AnimatedMeshSceneNode->getJointNode(LIME_SAFESTRINGTOSTRINGC_C_STR(jointName));
+    return BoneSceneNode::Wrap(n);
 }
 
 bool AnimatedMeshSceneNode::SetFrameLoop(int begin, int end)
 {
-	return m_AnimatedMeshSceneNode->setFrameLoop(begin, end);
+    return m_AnimatedMeshSceneNode->setFrameLoop(begin, end);
 }
 
 void AnimatedMeshSceneNode::SetJointMode(JointUpdateOnRender mode)
 {
-	m_AnimatedMeshSceneNode->setJointMode((scene::E_JOINT_UPDATE_ON_RENDER)mode);
+    m_AnimatedMeshSceneNode->setJointMode((scene::E_JOINT_UPDATE_ON_RENDER)mode);
 }
 
 bool AnimatedMeshSceneNode::SetMD2Animation(AnimationTypeMD2 animationType)
 {
-	return m_AnimatedMeshSceneNode->setMD2Animation((scene::EMD2_ANIMATION_TYPE)animationType);
+    return m_AnimatedMeshSceneNode->setMD2Animation((scene::EMD2_ANIMATION_TYPE)animationType);
 }
 
 bool AnimatedMeshSceneNode::SetMD2Animation(String^ animationName)
 {
-	return m_AnimatedMeshSceneNode->setMD2Animation(LIME_SAFESTRINGTOSTRINGC_C_STR(animationName));
+    return m_AnimatedMeshSceneNode->setMD2Animation(LIME_SAFESTRINGTOSTRINGC_C_STR(animationName));
 }
 
 void AnimatedMeshSceneNode::SetRenderFromIdentity(bool on)
 {
-	m_AnimatedMeshSceneNode->setRenderFromIdentity(on);
+    m_AnimatedMeshSceneNode->setRenderFromIdentity(on);
 }
 
 void AnimatedMeshSceneNode::SetTransitionTime(float timeInSeconds)
 {
-	m_AnimatedMeshSceneNode->setTransitionTime(timeInSeconds);
+    m_AnimatedMeshSceneNode->setTransitionTime(timeInSeconds);
 }
 
 float AnimatedMeshSceneNode::AnimationSpeed::get()
 {
-	return m_AnimatedMeshSceneNode->getAnimationSpeed();
+    return m_AnimatedMeshSceneNode->getAnimationSpeed();
 }
 
 void AnimatedMeshSceneNode::AnimationSpeed::set(float value)
 {
-	m_AnimatedMeshSceneNode->setAnimationSpeed(value);
+    m_AnimatedMeshSceneNode->setAnimationSpeed(value);
 }
 
 float AnimatedMeshSceneNode::CurrentFrame::get()
 {
-	return m_AnimatedMeshSceneNode->getFrameNr();
+    return m_AnimatedMeshSceneNode->getFrameNr();
 }
 
 void AnimatedMeshSceneNode::CurrentFrame::set(float value)
 {
-	m_AnimatedMeshSceneNode->setCurrentFrame(value);
+    m_AnimatedMeshSceneNode->setCurrentFrame(value);
 }
 
 int AnimatedMeshSceneNode::EndFrame::get()
 {
-	return m_AnimatedMeshSceneNode->getEndFrame();
+    return m_AnimatedMeshSceneNode->getEndFrame();
 }
 
 int AnimatedMeshSceneNode::JointCount::get()
 {
-	return m_AnimatedMeshSceneNode->getJointCount();
+    return m_AnimatedMeshSceneNode->getJointCount();
 }
 
 bool AnimatedMeshSceneNode::LoopMode::get()
 {
-	return m_AnimatedMeshSceneNode->getLoopMode();
+    return m_AnimatedMeshSceneNode->getLoopMode();
 }
 
 void AnimatedMeshSceneNode::LoopMode::set(bool value)
 {
-	m_AnimatedMeshSceneNode->setLoopMode(value);
+    m_AnimatedMeshSceneNode->setLoopMode(value);
 }
 
 AnimatedMesh^ AnimatedMeshSceneNode::Mesh::get()
 {
-	scene::IAnimatedMesh* m = m_AnimatedMeshSceneNode->getMesh();
-	return AnimatedMesh::Wrap(m);
+    scene::IAnimatedMesh* m = m_AnimatedMeshSceneNode->getMesh();
+    return AnimatedMesh::Wrap(m);
 }
 
 void AnimatedMeshSceneNode::Mesh::set(AnimatedMesh^ value)
 {
-	m_AnimatedMeshSceneNode->setMesh(LIME_SAFEREF(value, m_AnimatedMesh));
+    m_AnimatedMeshSceneNode->setMesh(LIME_SAFEREF(value, m_AnimatedMesh));
 }
 
 int AnimatedMeshSceneNode::StartFrame::get()
 {
-	return m_AnimatedMeshSceneNode->getStartFrame();
+    return m_AnimatedMeshSceneNode->getStartFrame();
 }
 
 bool AnimatedMeshSceneNode::ReadOnlyMaterials::get()
 {
-	return m_AnimatedMeshSceneNode->isReadOnlyMaterials();
+    return m_AnimatedMeshSceneNode->isReadOnlyMaterials();
 }
 
 void AnimatedMeshSceneNode::ReadOnlyMaterials::set(bool value)
 {
-	m_AnimatedMeshSceneNode->setReadOnlyMaterials(value);
+    m_AnimatedMeshSceneNode->setReadOnlyMaterials(value);
 }
 
 } // end namespace Scene

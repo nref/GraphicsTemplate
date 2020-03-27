@@ -13,15 +13,15 @@ public ref class GUIFileOpenDialog : GUIElement
 {
 public:
 
-	property String^ DirectoryName { String^ get(); }
-	property String^ FileName { String^ get(); }
+    property String^ DirectoryName { String^ get(); }
+    property String^ FileName { String^ get(); }
 
 internal:
 
-	static GUIFileOpenDialog^ Wrap(gui::IGUIFileOpenDialog* ref);
-	GUIFileOpenDialog(gui::IGUIFileOpenDialog* ref);
+    static GUIFileOpenDialog^ Wrap(gui::IGUIFileOpenDialog* ref);
+    GUIFileOpenDialog(gui::IGUIFileOpenDialog* ref);
 
-	gui::IGUIFileOpenDialog* m_GUIFileOpenDialog;
+    gui::IGUIFileOpenDialog* m_GUIFileOpenDialog;
 };
 
 } // end namespace GUI

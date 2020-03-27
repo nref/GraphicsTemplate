@@ -16,18 +16,18 @@ public ref class AttributeExchangingObject : ReferenceCounted
 {
 public:
 
-	void DeserializeAttributes(Attributes^ deserializeFrom, AttributeReadWriteOptions^ options);
-	void DeserializeAttributes(Attributes^ deserializeFrom);
+    void DeserializeAttributes(Attributes^ deserializeFrom, AttributeReadWriteOptions^ options);
+    void DeserializeAttributes(Attributes^ deserializeFrom);
 
-	void SerializeAttributes(Attributes^ serializeTo, AttributeReadWriteOptions^ options);
-	void SerializeAttributes(Attributes^ serializeTo);
+    void SerializeAttributes(Attributes^ serializeTo, AttributeReadWriteOptions^ options);
+    void SerializeAttributes(Attributes^ serializeTo);
 
 internal:
 
-	AttributeExchangingObject(io::IAttributeExchangingObject* ref_or_null);
-	void setAttributeExchangingObject(io::IAttributeExchangingObject* ref);
+    AttributeExchangingObject(io::IAttributeExchangingObject* ref_or_null);
+    void setAttributeExchangingObject(io::IAttributeExchangingObject* ref);
 
-	io::IAttributeExchangingObject* m_AttributeExchangingObject;
+    io::IAttributeExchangingObject* m_AttributeExchangingObject;
 };
 
 } // end namespace IO

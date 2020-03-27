@@ -10,42 +10,42 @@ namespace IrrlichtNetCore {
 
 Randomizer^ Randomizer::Wrap(irr::IRandomizer* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew Randomizer(ref);
+    return gcnew Randomizer(ref);
 }
 
 Randomizer::Randomizer(irr::IRandomizer* ref)
-	: ReferenceCounted(ref)
+    : ReferenceCounted(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_Randomizer = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_Randomizer = ref;
 }
 
 float Randomizer::GetFloat()
 {
-	return m_Randomizer->frand();
+    return m_Randomizer->frand();
 }
 
 int Randomizer::GetInt()
 {
-	return m_Randomizer->rand();
+    return m_Randomizer->rand();
 }
 
 void Randomizer::Reset(int value)
 {
-	m_Randomizer->reset(value);
+    m_Randomizer->reset(value);
 }
 
 void Randomizer::Reset()
 {
-	m_Randomizer->reset();
+    m_Randomizer->reset();
 }
 
 int Randomizer::MaxRandomInt::get()
 {
-	return m_Randomizer->randMax();
+    return m_Randomizer->randMax();
 }
 
 } // end namespace IrrlichtNetCore

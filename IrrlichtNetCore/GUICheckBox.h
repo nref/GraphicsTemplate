@@ -13,16 +13,16 @@ public ref class GUICheckBox : GUIElement
 {
 public:
 
-	property bool Checked { bool get(); void set(bool value); }
-	property bool DrawBackground { bool get(); void set(bool value); }
-	property bool DrawBorder { bool get(); void set(bool value); }
+    property bool Checked { bool get(); void set(bool value); }
+    property bool DrawBackground { bool get(); void set(bool value); }
+    property bool DrawBorder { bool get(); void set(bool value); }
 
 internal:
 
-	static GUICheckBox^ Wrap(gui::IGUICheckBox* ref);
-	GUICheckBox(gui::IGUICheckBox* ref);
+    static GUICheckBox^ Wrap(gui::IGUICheckBox* ref);
+    GUICheckBox(gui::IGUICheckBox* ref);
 
-	gui::IGUICheckBox* m_GUICheckBox;
+    gui::IGUICheckBox* m_GUICheckBox;
 };
 
 } // end namespace GUI

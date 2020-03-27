@@ -13,14 +13,14 @@ public ref class GUIColorSelectDialog : GUIElement
 {
 public:
 
-	// nothing
+    // nothing
 
 internal:
 
-	static GUIColorSelectDialog^ Wrap(gui::IGUIColorSelectDialog* ref);
-	GUIColorSelectDialog(gui::IGUIColorSelectDialog* ref);
+    static GUIColorSelectDialog^ Wrap(gui::IGUIColorSelectDialog* ref);
+    GUIColorSelectDialog(gui::IGUIColorSelectDialog* ref);
 
-	gui::IGUIColorSelectDialog* m_GUIColorSelectDialog;
+    gui::IGUIColorSelectDialog* m_GUIColorSelectDialog;
 };
 
 } // end namespace GUI

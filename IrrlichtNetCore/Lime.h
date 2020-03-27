@@ -22,110 +22,110 @@ using namespace System::Runtime::InteropServices; // for Marshal
 
 namespace IrrlichtNetCore {
 
-	/// <summary>
-	/// Irrlicht Lime core class. Provides wrapper common functionality.
-	/// </summary>
-	public ref class Lime
-	{
-	public:
+    /// <summary>
+    /// Irrlicht Lime core class. Provides wrapper common functionality.
+    /// </summary>
+    public ref class Lime
+    {
+    public:
 
-		template <class T>
-		ref class NativeValue
-		{
-		public:
+        template <class T>
+        ref class NativeValue
+        {
+        public:
 
-			~NativeValue()
-			{
-				this->!NativeValue();
-			}
+            ~NativeValue()
+            {
+                this->!NativeValue();
+            }
 
-			!NativeValue()
-			{
-				if (m_DeleteOnFinalize)
-					delete m_NativeValue;
-			}
+            !NativeValue()
+            {
+                if (m_DeleteOnFinalize)
+                    delete m_NativeValue;
+            }
 
-		internal:
+        internal:
 
-			T* m_NativeValue;
+            T* m_NativeValue;
 
-		protected:
+        protected:
 
-			NativeValue(bool deleteOnFinalize)
-			{
-				m_DeleteOnFinalize = deleteOnFinalize;
-			}
+            NativeValue(bool deleteOnFinalize)
+            {
+                m_DeleteOnFinalize = deleteOnFinalize;
+            }
 
-		private:
+        private:
 
-			bool m_DeleteOnFinalize;
-		};
+            bool m_DeleteOnFinalize;
+        };
 
-		/// <summary>
-		/// Irrlicht Lime version.
-		/// </summary>
-		static property String^ Version
-		{
-			String^ get()
-			{
-				System::Version^ v = Assembly::GetAssembly(Lime::typeid)->GetName()->Version;
-				String^ s;
+        /// <summary>
+        /// Irrlicht Lime version.
+        /// </summary>
+        static property String^ Version
+        {
+            String^ get()
+            {
+                System::Version^ v = Assembly::GetAssembly(Lime::typeid)->GetName()->Version;
+                String^ s;
 
-				if (v->Build != 0)
-					s = String::Format("{0}.{1}.{2}", v->Major, v->Minor, v->Build);
-				else
-					s = String::Format("{0}.{1}", v->Major, v->Minor);
+                if (v->Build != 0)
+                    s = String::Format("{0}.{1}.{2}", v->Major, v->Minor, v->Build);
+                else
+                    s = String::Format("{0}.{1}", v->Major, v->Minor);
 
 #if _DEBUG
 #if WIN64
-				s += " (Debug-x64)";
+                s += " (Debug-x64)";
 #else
-				s += " (Debug-x86)";
+                s += " (Debug-x86)";
 #endif
 #else
 #if WIN64
-				s += " (Release-x64)";
+                s += " (Release-x64)";
 #else
-				s += " (Release-x86)";
+                s += " (Release-x86)";
 #endif
 #endif
 
-				return s;
-			}
-		}
+                return s;
+            }
+        }
 
-	internal:
+    internal:
 
-		static io::path StringToPath(String^ s)
-		{
-			return io::path(StringToStringW(s));
-		}
+        static io::path StringToPath(String^ s)
+        {
+            return io::path(StringToStringW(s));
+        }
 
-		static core::stringc StringToStringC(String^ s)
-		{
-			LIME_ASSERT(s != nullptr);
+        static core::stringc StringToStringC(String^ s)
+        {
+            LIME_ASSERT(s != nullptr);
 
-			char* c = (char*)Marshal::StringToHGlobalAnsi(s).ToPointer();
-			core::stringc strC = core::stringc(c);
+            char* c = (char*)Marshal::StringToHGlobalAnsi(s).ToPointer();
+            core::stringc strC = core::stringc(c);
 
-			Marshal::FreeHGlobal(IntPtr(c));
-			return strC;
-		}
+            Marshal::FreeHGlobal(IntPtr(c));
+            return strC;
+        }
 
-		static core::stringw StringToStringW(String^ s)
-		{
-			LIME_ASSERT(s != nullptr);
+        static core::stringw StringToStringW(String^ s)
+        {
+            LIME_ASSERT(s != nullptr);
 
-			wchar_t* w = (wchar_t*)Marshal::StringToHGlobalUni(s).ToPointer();
-			core::stringw strW = core::stringw(w);
+            wchar_t* w = (wchar_t*)Marshal::StringToHGlobalUni(s).ToPointer();
+            core::stringw strW = core::stringw(w);
 
-			Marshal::FreeHGlobal(IntPtr(w));
-			return strW;
-		}
+            Marshal::FreeHGlobal(IntPtr(w));
+            return strW;
+        }
 
-	private:
+    private:
 
-		Lime() {}
-	};
+        Lime() {}
+    };
 
 } // end namespace IrrlichtNetCore

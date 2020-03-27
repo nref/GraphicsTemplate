@@ -4,8 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>x64;x86</Platforms>
-    <AssemblyName>GraphicsTemplate.Graphics</AssemblyName>
-    <RootNamespace>GraphicsTemplate.Graphics</RootNamespace>
+    <AssemblyName>GraphicsTemplate.Irrlicht</AssemblyName>
+    <RootNamespace>GraphicsTemplate.Irrlicht</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
@@ -27,6 +27,9 @@
     <Reference Include="IrrlichtNetCore">
       <HintPath>..\IrrlichtNetCore\bin\x86\Release\IrrlichtNetCore.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphicsTemplate.Shared\GraphicsTemplate.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,17 +11,17 @@ namespace GUI {
 
 GUISpriteBank^ GUISpriteBank::Wrap(gui::IGUISpriteBank* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew GUISpriteBank(ref);
+    return gcnew GUISpriteBank(ref);
 }
 
 GUISpriteBank::GUISpriteBank(gui::IGUISpriteBank* ref)
-	: ReferenceCounted(ref)
+    : ReferenceCounted(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_GUISpriteBank = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_GUISpriteBank = ref;
 }
 
 } // end namespace GUI

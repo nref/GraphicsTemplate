@@ -11,14 +11,14 @@ namespace GraphicsTemplate.Client
             Graphics = graphics;
         }
 
-		public void HandleKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-		{
-			Graphics.HandleKeyDown(sender, e);
-		}
+        public void HandleKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            Graphics.HandleKeyDown(sender, e);
+        }
 
-		public void HandleKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
-		{
-			Graphics.HandleKeyUp(sender, e);
-		}
-	}
+        public void HandleKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            Graphics.HandleKeyUp(sender, e);
+        }
+    }
 }

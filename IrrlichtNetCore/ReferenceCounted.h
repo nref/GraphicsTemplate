@@ -22,48 +22,48 @@ public ref class ReferenceCounted
 {
 public:
 
-	/// <summary>
-	/// Equality operator.
-	/// </summary>
-	static bool operator == (ReferenceCounted^ v1, ReferenceCounted^ v2);
+    /// <summary>
+    /// Equality operator.
+    /// </summary>
+    static bool operator == (ReferenceCounted^ v1, ReferenceCounted^ v2);
 
-	/// <summary>
-	/// Inequality operator.
-	/// </summary>
-	static bool operator != (ReferenceCounted^ v1, ReferenceCounted^ v2);
+    /// <summary>
+    /// Inequality operator.
+    /// </summary>
+    static bool operator != (ReferenceCounted^ v1, ReferenceCounted^ v2);
 
-	/// <summary>
-	/// Drops the object. Decrements the reference counter by one.
-	/// Note, that you only need to call Drop() if you created the object
-	/// (e.g. you get the object by calling method with "Create" in its name).
-	/// </summary>
-	/// <returns>True, if the object was deleted.</returns>
-	bool Drop();
+    /// <summary>
+    /// Drops the object. Decrements the reference counter by one.
+    /// Note, that you only need to call Drop() if you created the object
+    /// (e.g. you get the object by calling method with "Create" in its name).
+    /// </summary>
+    /// <returns>True, if the object was deleted.</returns>
+    bool Drop();
 
-	/// <summary>
-	/// Grabs the object. Increments the reference counter by one.
-	/// Someone who calls Grab() to an object, should later also call Drop() to it.
-	/// If an object never gets as much Drop() as Grab() calls, it will never be destroyed.
-	/// </summary>
-	void Grab();
+    /// <summary>
+    /// Grabs the object. Increments the reference counter by one.
+    /// Someone who calls Grab() to an object, should later also call Drop() to it.
+    /// If an object never gets as much Drop() as Grab() calls, it will never be destroyed.
+    /// </summary>
+    void Grab();
 
-	/// <summary>
-	/// The debug name of the object.
-	/// This value may only be set and changed by the object itself.
-	/// This value should only be used in Debug mode.
-	/// </summary>
-	property String^ DebugName { String^ get(); }
+    /// <summary>
+    /// The debug name of the object.
+    /// This value may only be set and changed by the object itself.
+    /// This value should only be used in Debug mode.
+    /// </summary>
+    property String^ DebugName { String^ get(); }
 
-	/// <summary>
-	/// Current value of the reference counter.
-	/// </summary>
-	property int ReferenceCount { int get(); }
+    /// <summary>
+    /// Current value of the reference counter.
+    /// </summary>
+    property int ReferenceCount { int get(); }
 
 internal:
 
-	ReferenceCounted(irr::IReferenceCounted* referenceCounted_or_null);
+    ReferenceCounted(irr::IReferenceCounted* referenceCounted_or_null);
 
-	irr::IReferenceCounted* m_ReferenceCounted;
+    irr::IReferenceCounted* m_ReferenceCounted;
 };
 
 } // end namespace IrrlichtNetCore

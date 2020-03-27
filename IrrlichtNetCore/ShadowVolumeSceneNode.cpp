@@ -10,27 +10,27 @@ namespace Scene {
 
 ShadowVolumeSceneNode^ ShadowVolumeSceneNode::Wrap(scene::IShadowVolumeSceneNode* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew ShadowVolumeSceneNode(ref);
+    return gcnew ShadowVolumeSceneNode(ref);
 }
 
 ShadowVolumeSceneNode::ShadowVolumeSceneNode(scene::IShadowVolumeSceneNode* ref)
-	: SceneNode(ref)
+    : SceneNode(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_ShadowVolumeSceneNode = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_ShadowVolumeSceneNode = ref;
 }
 
 void ShadowVolumeSceneNode::SetShadowMesh(Mesh^ mesh)
 {
-	m_ShadowVolumeSceneNode->setShadowMesh(LIME_SAFEREF(mesh, m_Mesh));
+    m_ShadowVolumeSceneNode->setShadowMesh(LIME_SAFEREF(mesh, m_Mesh));
 }
 
 void ShadowVolumeSceneNode::UpdateShadowVolumes()
 {
-	m_ShadowVolumeSceneNode->updateShadowVolumes();
+    m_ShadowVolumeSceneNode->updateShadowVolumes();
 }
 
 } // end namespace Scene

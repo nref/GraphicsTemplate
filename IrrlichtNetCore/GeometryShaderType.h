@@ -9,16 +9,16 @@ using namespace System;
 namespace IrrlichtNetCore {
 namespace Video {
 
-	/// <summary>
-	/// Enumeration for supported geometry shader types.
-	/// </summary>
-	public enum class GeometryShaderType
-	{
-		/// <summary>
-		/// Geometry shader 4.0.
-		/// </summary>
-		GS_4_0 = EGST_GS_4_0
-	};
+    /// <summary>
+    /// Enumeration for supported geometry shader types.
+    /// </summary>
+    public enum class GeometryShaderType
+    {
+        /// <summary>
+        /// Geometry shader 4.0.
+        /// </summary>
+        GS_4_0 = EGST_GS_4_0
+    };
 
 } // end namespace Video
 } // end namespace IrrlichtNetCore

@@ -12,31 +12,31 @@ namespace Scene {
 
 MeshLoader^ MeshLoader::Wrap(scene::IMeshLoader* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew MeshLoader(ref);
+    return gcnew MeshLoader(ref);
 }
 
 MeshLoader::MeshLoader(scene::IMeshLoader* ref)
-	: ReferenceCounted(ref)
+    : ReferenceCounted(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_MeshLoader = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_MeshLoader = ref;
 }
 
 AnimatedMesh^ MeshLoader::CreateMesh(IO::ReadFile^ file)
 {
-	LIME_ASSERT(file != nullptr);
+    LIME_ASSERT(file != nullptr);
 
-	scene::IAnimatedMesh* m = m_MeshLoader->createMesh(LIME_SAFEREF(file, m_ReadFile));
-	return AnimatedMesh::Wrap(m);
+    scene::IAnimatedMesh* m = m_MeshLoader->createMesh(LIME_SAFEREF(file, m_ReadFile));
+    return AnimatedMesh::Wrap(m);
 }
 
 bool MeshLoader::IsALoadableFileExtension(String^ filename)
 {
-	LIME_ASSERT(filename != nullptr);
-	return m_MeshLoader->isALoadableFileExtension(Lime::StringToPath(filename));
+    LIME_ASSERT(filename != nullptr);
+    return m_MeshLoader->isALoadableFileExtension(Lime::StringToPath(filename));
 }
 
 } // end namespace Scene

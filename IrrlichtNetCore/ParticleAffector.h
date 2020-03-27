@@ -16,19 +16,19 @@ public ref class ParticleAffector : IO::AttributeExchangingObject
 {
 public:
 
-	void Affect(unsigned int now, List<Particle^>^ particleList);
+    void Affect(unsigned int now, List<Particle^>^ particleList);
 
-	property bool Enabled { bool get(); void set(bool value); }
-	property ParticleAffectorType Type { ParticleAffectorType get(); }
+    property bool Enabled { bool get(); void set(bool value); }
+    property ParticleAffectorType Type { ParticleAffectorType get(); }
 
-	virtual String^ ToString() override;
+    virtual String^ ToString() override;
 
 internal:
 
-	static ParticleAffector^ Wrap(scene::IParticleAffector* ref);
-	ParticleAffector(scene::IParticleAffector* ref);
+    static ParticleAffector^ Wrap(scene::IParticleAffector* ref);
+    ParticleAffector(scene::IParticleAffector* ref);
 
-	scene::IParticleAffector* m_ParticleAffector;
+    scene::IParticleAffector* m_ParticleAffector;
 };
 
 } // end namespace Scene

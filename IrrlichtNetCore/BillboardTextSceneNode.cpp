@@ -10,28 +10,28 @@ namespace Scene {
 
 BillboardTextSceneNode^ BillboardTextSceneNode::Wrap(scene::IBillboardTextSceneNode* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew BillboardTextSceneNode(ref);
+    return gcnew BillboardTextSceneNode(ref);
 }
 
 BillboardTextSceneNode::BillboardTextSceneNode(scene::IBillboardTextSceneNode* ref)
-	: BillboardSceneNode(ref)
+    : BillboardSceneNode(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_BillboardTextSceneNode = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_BillboardTextSceneNode = ref;
 }
 
 void BillboardTextSceneNode::SetText(String^ text)
 {
-	m_BillboardTextSceneNode->setText(LIME_SAFESTRINGTOSTRINGW_C_STR(text));
+    m_BillboardTextSceneNode->setText(LIME_SAFESTRINGTOSTRINGW_C_STR(text));
 }
 
 void BillboardTextSceneNode::SetTextColor(Video::Color^ color)
 {
-	LIME_ASSERT(color != nullptr);
-	m_BillboardTextSceneNode->setTextColor(*color->m_NativeValue);
+    LIME_ASSERT(color != nullptr);
+    m_BillboardTextSceneNode->setTextColor(*color->m_NativeValue);
 }
 
 } // end namespace Scene

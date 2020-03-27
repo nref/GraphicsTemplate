@@ -9,27 +9,27 @@ using namespace System;
 namespace IrrlichtNetCore {
 namespace GUI {
 
-	[Flags]
-	/// <summary>
-	/// GUI table draw flags.
-	/// </summary>
-	public enum class GUITableDrawFlag
-	{
-		/// <summary>
-		/// Draw rows.
-		/// </summary>
-		Rows = EGTDF_ROWS,
+    [Flags]
+    /// <summary>
+    /// GUI table draw flags.
+    /// </summary>
+    public enum class GUITableDrawFlag
+    {
+        /// <summary>
+        /// Draw rows.
+        /// </summary>
+        Rows = EGTDF_ROWS,
 
-		/// <summary>
-		/// Draw columns.
-		/// </summary>
-		Columns = EGTDF_COLUMNS,
+        /// <summary>
+        /// Draw columns.
+        /// </summary>
+        Columns = EGTDF_COLUMNS,
 
-		/// <summary>
-		/// Draw active row.
-		/// </summary>
-		ActiveRow = EGTDF_ACTIVE_ROW
-	};
+        /// <summary>
+        /// Draw active row.
+        /// </summary>
+        ActiveRow = EGTDF_ACTIVE_ROW
+    };
 
 } // end namespace GUI
 } // end namespace IrrlichtNetCore

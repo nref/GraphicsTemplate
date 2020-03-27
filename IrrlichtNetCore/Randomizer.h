@@ -13,20 +13,20 @@ public ref class Randomizer : ReferenceCounted
 {
 public:
 
-	float GetFloat();
-	int GetInt();
+    float GetFloat();
+    int GetInt();
 
-	void Reset(int value);
-	void Reset();
+    void Reset(int value);
+    void Reset();
 
-	property int MaxRandomInt { int get(); }
+    property int MaxRandomInt { int get(); }
 
 internal:
 
-	static Randomizer^ Wrap(irr::IRandomizer* ref);
-	Randomizer(irr::IRandomizer* ref);
+    static Randomizer^ Wrap(irr::IRandomizer* ref);
+    Randomizer(irr::IRandomizer* ref);
 
-	irr::IRandomizer* m_Randomizer;
+    irr::IRandomizer* m_Randomizer;
 };
 
 } // end namespace IrrlichtNetCore

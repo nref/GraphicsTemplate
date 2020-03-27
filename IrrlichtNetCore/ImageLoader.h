@@ -17,16 +17,16 @@ public ref class ImageLoader : ReferenceCounted
 {
 public:
 
-	bool IsLoadableFileExtension(String^ filename);
-	bool IsLoadableFileFormat(IO::ReadFile^ file);
-	Image^ LoadImage(IO::ReadFile^ file);
+    bool IsLoadableFileExtension(String^ filename);
+    bool IsLoadableFileFormat(IO::ReadFile^ file);
+    Image^ LoadImage(IO::ReadFile^ file);
 
 internal:
 
-	static ImageLoader^ Wrap(video::IImageLoader* ref);
-	ImageLoader(video::IImageLoader* ref);
+    static ImageLoader^ Wrap(video::IImageLoader* ref);
+    ImageLoader(video::IImageLoader* ref);
 
-	video::IImageLoader* m_ImageLoader;
+    video::IImageLoader* m_ImageLoader;
 };
 
 } // end namespace Video

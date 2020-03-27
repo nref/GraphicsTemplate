@@ -14,15 +14,15 @@ public ref class ParticleGravityAffector : ParticleAffector
 {
 public:
 
-	property Vector3Df^ Gravity { Vector3Df^ get(); void set(Vector3Df^ value); }
-	property float TimeForceLost { float get(); void set(float value); }
+    property Vector3Df^ Gravity { Vector3Df^ get(); void set(Vector3Df^ value); }
+    property float TimeForceLost { float get(); void set(float value); }
 
 internal:
 
-	static ParticleGravityAffector^ Wrap(scene::IParticleGravityAffector* ref);
-	ParticleGravityAffector(scene::IParticleGravityAffector* ref);
+    static ParticleGravityAffector^ Wrap(scene::IParticleGravityAffector* ref);
+    ParticleGravityAffector(scene::IParticleGravityAffector* ref);
 
-	scene::IParticleGravityAffector* m_ParticleGravityAffector;
+    scene::IParticleGravityAffector* m_ParticleGravityAffector;
 };
 
 } // end namespace Scene

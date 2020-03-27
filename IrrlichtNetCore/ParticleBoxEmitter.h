@@ -14,14 +14,14 @@ public ref class ParticleBoxEmitter : ParticleEmitter
 {
 public:
 
-	property AABBox^ Box { AABBox^ get(); void set(AABBox^ value); }
+    property AABBox^ Box { AABBox^ get(); void set(AABBox^ value); }
 
 internal:
 
-	static ParticleBoxEmitter^ Wrap(scene::IParticleBoxEmitter* ref);
-	ParticleBoxEmitter(scene::IParticleBoxEmitter* ref);
+    static ParticleBoxEmitter^ Wrap(scene::IParticleBoxEmitter* ref);
+    ParticleBoxEmitter(scene::IParticleBoxEmitter* ref);
 
-	scene::IParticleBoxEmitter* m_ParticleBoxEmitter;
+    scene::IParticleBoxEmitter* m_ParticleBoxEmitter;
 };
 
 } // end namespace Scene

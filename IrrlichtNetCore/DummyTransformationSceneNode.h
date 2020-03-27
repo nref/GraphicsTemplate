@@ -13,14 +13,14 @@ public ref class DummyTransformationSceneNode : SceneNode
 {
 public:
 
-	property Matrix^ RelativeTransformationMatrix { Matrix^ get(); }
+    property Matrix^ RelativeTransformationMatrix { Matrix^ get(); }
 
 internal:
 
-	static DummyTransformationSceneNode^ Wrap(scene::IDummyTransformationSceneNode* ref);
-	DummyTransformationSceneNode(scene::IDummyTransformationSceneNode* ref);
+    static DummyTransformationSceneNode^ Wrap(scene::IDummyTransformationSceneNode* ref);
+    DummyTransformationSceneNode(scene::IDummyTransformationSceneNode* ref);
 
-	scene::IDummyTransformationSceneNode* m_DummyTransformationSceneNode;
+    scene::IDummyTransformationSceneNode* m_DummyTransformationSceneNode;
 };
 
 } // end namespace Scene

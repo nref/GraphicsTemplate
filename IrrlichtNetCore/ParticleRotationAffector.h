@@ -14,15 +14,15 @@ public ref class ParticleRotationAffector : ParticleAffector
 {
 public:
 
-	property Vector3Df^ Pivot { Vector3Df^ get(); void set(Vector3Df^ value); }
-	property Vector3Df^ Speed { Vector3Df^ get(); void set(Vector3Df^ value); }
+    property Vector3Df^ Pivot { Vector3Df^ get(); void set(Vector3Df^ value); }
+    property Vector3Df^ Speed { Vector3Df^ get(); void set(Vector3Df^ value); }
 
 internal:
 
-	static ParticleRotationAffector^ Wrap(scene::IParticleRotationAffector* ref);
-	ParticleRotationAffector(scene::IParticleRotationAffector* ref);
+    static ParticleRotationAffector^ Wrap(scene::IParticleRotationAffector* ref);
+    ParticleRotationAffector(scene::IParticleRotationAffector* ref);
 
-	scene::IParticleRotationAffector* m_ParticleRotationAffector;
+    scene::IParticleRotationAffector* m_ParticleRotationAffector;
 };
 
 } // end namespace Scene

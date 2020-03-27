@@ -16,17 +16,17 @@ public ref class ParticleAnimatedMeshSceneNodeEmitter : ParticleEmitter
 {
 public:
 
-	property bool EveryMeshVertex { bool get(); void set(bool value); }
-	property float NormalDirectionModifier { float get(); void set(float value); }
-	property AnimatedMeshSceneNode^ ParticleNode { AnimatedMeshSceneNode^ get(); void set(AnimatedMeshSceneNode^ value); }
-	property bool UseNormalDirection { bool get(); void set(bool value); }
+    property bool EveryMeshVertex { bool get(); void set(bool value); }
+    property float NormalDirectionModifier { float get(); void set(float value); }
+    property AnimatedMeshSceneNode^ ParticleNode { AnimatedMeshSceneNode^ get(); void set(AnimatedMeshSceneNode^ value); }
+    property bool UseNormalDirection { bool get(); void set(bool value); }
 
 internal:
 
-	static ParticleAnimatedMeshSceneNodeEmitter^ Wrap(scene::IParticleAnimatedMeshSceneNodeEmitter* ref);
-	ParticleAnimatedMeshSceneNodeEmitter(scene::IParticleAnimatedMeshSceneNodeEmitter* ref);
+    static ParticleAnimatedMeshSceneNodeEmitter^ Wrap(scene::IParticleAnimatedMeshSceneNodeEmitter* ref);
+    ParticleAnimatedMeshSceneNodeEmitter(scene::IParticleAnimatedMeshSceneNodeEmitter* ref);
 
-	scene::IParticleAnimatedMeshSceneNodeEmitter* m_ParticleAnimatedMeshSceneNodeEmitter;
+    scene::IParticleAnimatedMeshSceneNodeEmitter* m_ParticleAnimatedMeshSceneNodeEmitter;
 };
 
 } // end namespace Scene

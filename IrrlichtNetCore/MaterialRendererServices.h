@@ -16,28 +16,28 @@ public ref class MaterialRendererServices
 {
 public:
 
-	void SetBasicRenderStates(Material^ newMaterial, Material^ lastMaterial, bool resetAllRenderStates);
+    void SetBasicRenderStates(Material^ newMaterial, Material^ lastMaterial, bool resetAllRenderStates);
 
-	int GetPixelShaderConstantID(String^ name);
-	void SetPixelShaderConstantList(int startRegisterIndex, array<float>^ valueFloats);
-	bool SetPixelShaderConstant(int index, array<float>^ valueFloats);
-	bool SetPixelShaderConstant(int index, array<int>^ valueInts);
+    int GetPixelShaderConstantID(String^ name);
+    void SetPixelShaderConstantList(int startRegisterIndex, array<float>^ valueFloats);
+    bool SetPixelShaderConstant(int index, array<float>^ valueFloats);
+    bool SetPixelShaderConstant(int index, array<int>^ valueInts);
 
-	int GetVertexShaderConstantID(String^ name);
-	void SetVertexShaderConstantList(int startRegisterIndex, array<float>^ valueFloats);
-	bool SetVertexShaderConstant(int index, array<float>^ valueFloats);
-	bool SetVertexShaderConstant(int index, array<int>^ valueInts);
+    int GetVertexShaderConstantID(String^ name);
+    void SetVertexShaderConstantList(int startRegisterIndex, array<float>^ valueFloats);
+    bool SetVertexShaderConstant(int index, array<float>^ valueFloats);
+    bool SetVertexShaderConstant(int index, array<int>^ valueInts);
 
-	property Video::VideoDriver^ VideoDriver { Video::VideoDriver^ get(); }
+    property Video::VideoDriver^ VideoDriver { Video::VideoDriver^ get(); }
 
-	virtual String^ ToString() override;
+    virtual String^ ToString() override;
 
 internal:
 
-	static MaterialRendererServices^ Wrap(video::IMaterialRendererServices* ref);
-	MaterialRendererServices(video::IMaterialRendererServices* ref);
+    static MaterialRendererServices^ Wrap(video::IMaterialRendererServices* ref);
+    MaterialRendererServices(video::IMaterialRendererServices* ref);
 
-	video::IMaterialRendererServices* m_MaterialRendererServices;
+    video::IMaterialRendererServices* m_MaterialRendererServices;
 };
 
 } // end namespace Video

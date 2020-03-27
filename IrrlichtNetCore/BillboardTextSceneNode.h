@@ -13,15 +13,15 @@ public ref class BillboardTextSceneNode : BillboardSceneNode
 {
 public:
 
-	void SetText(String^ text);
-	void SetTextColor(Video::Color^ color);
+    void SetText(String^ text);
+    void SetTextColor(Video::Color^ color);
 
 internal:
 
-	static BillboardTextSceneNode^ Wrap(scene::IBillboardTextSceneNode* ref);
-	BillboardTextSceneNode(scene::IBillboardTextSceneNode* ref);
+    static BillboardTextSceneNode^ Wrap(scene::IBillboardTextSceneNode* ref);
+    BillboardTextSceneNode(scene::IBillboardTextSceneNode* ref);
 
-	scene::IBillboardTextSceneNode* m_BillboardTextSceneNode;
+    scene::IBillboardTextSceneNode* m_BillboardTextSceneNode;
 };
 
 } // end namespace Scene

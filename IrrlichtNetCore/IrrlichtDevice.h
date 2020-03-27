@@ -33,91 +33,91 @@ public ref class IrrlichtDevice : ReferenceCounted
 {
 public:
 
-	static IrrlichtDevice^ CreateDevice(IrrlichtCreationParameters^ parameters);
+    static IrrlichtDevice^ CreateDevice(IrrlichtCreationParameters^ parameters);
 
-	static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize, int bits, bool fullscreen, bool stencilbuffer, bool vsync);
-	static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize, int bits, bool fullscreen, bool stencilbuffer);
-	static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize, int bits, bool fullscreen);
-	static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize, int bits);
-	static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize);
-	static IrrlichtDevice^ CreateDevice(Video::DriverType driverType);
-	static IrrlichtDevice^ CreateDevice();
+    static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize, int bits, bool fullscreen, bool stencilbuffer, bool vsync);
+    static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize, int bits, bool fullscreen, bool stencilbuffer);
+    static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize, int bits, bool fullscreen);
+    static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize, int bits);
+    static IrrlichtDevice^ CreateDevice(Video::DriverType driverType, Dimension2Di^ windowSize);
+    static IrrlichtDevice^ CreateDevice(Video::DriverType driverType);
+    static IrrlichtDevice^ CreateDevice();
 
-	static bool IsDriverSupported(Video::DriverType driver);
+    static bool IsDriverSupported(Video::DriverType driver);
 
-	~IrrlichtDevice();
-	!IrrlichtDevice();
+    ~IrrlichtDevice();
+    !IrrlichtDevice();
 
-	List<JoystickInfo^>^ ActivateJoysticks();
+    List<JoystickInfo^>^ ActivateJoysticks();
 
-	IrrlichtNetCore::Randomizer^ CreateRandomizer();
+    IrrlichtNetCore::Randomizer^ CreateRandomizer();
 
-	void ClearSystemMessages();
-	void Close();
-	bool GetGammaRamp([Out] float% red, [Out] float% green, [Out] float% blue, [Out] float% relativebrightness, [Out] float% relativecontrast);
+    void ClearSystemMessages();
+    void Close();
+    bool GetGammaRamp([Out] float% red, [Out] float% green, [Out] float% blue, [Out] float% relativebrightness, [Out] float% relativecontrast);
 
-	void MaximizeWindow();
-	void MinimizeWindow();
+    void MaximizeWindow();
+    void MinimizeWindow();
 
-	bool PostEvent(IrrlichtNetCore::Event^ e);
+    bool PostEvent(IrrlichtNetCore::Event^ e);
 
-	void RestoreWindow();
-	
-	/// <summary>
-	/// Runs the device.
-	/// Also increments the virtual timer by calling <c>Timer.Tick()</c>.
-	/// You can prevent this by calling <c>Timer.Stop()</c>; before and <c>Timer.Start()</c> after calling this method.
-	/// </summary>
-	/// <returns>False if device wants to be deleted.</returns>
-	bool Run();
+    void RestoreWindow();
+    
+    /// <summary>
+    /// Runs the device.
+    /// Also increments the virtual timer by calling <c>Timer.Tick()</c>.
+    /// You can prevent this by calling <c>Timer.Stop()</c>; before and <c>Timer.Start()</c> after calling this method.
+    /// </summary>
+    /// <returns>False if device wants to be deleted.</returns>
+    bool Run();
 
-	bool SetGammaRamp(float red, float green, float blue, float relativebrightness, float relativecontrast);
-	void SetInputReceivingSceneManager(Scene::SceneManager^ sceneManager);
-	void SetWindowCaption(String^ text);
-	void SetWindowResizable(bool resize);
+    bool SetGammaRamp(float red, float green, float blue, float relativebrightness, float relativecontrast);
+    void SetInputReceivingSceneManager(Scene::SceneManager^ sceneManager);
+    void SetWindowCaption(String^ text);
+    void SetWindowResizable(bool resize);
 
-	void Sleep(int timeMs, bool pauseTimer);
-	void Sleep(int timeMs);
+    void Sleep(int timeMs, bool pauseTimer);
+    void Sleep(int timeMs);
 
-	/// <summary>
-	/// Cause the device to temporarily pause execution and let other processes run.
-	/// This should bring down processor usage without major performance loss for Irrlicht.
-	/// </summary>
-	void Yield();
+    /// <summary>
+    /// Cause the device to temporarily pause execution and let other processes run.
+    /// This should bring down processor usage without major performance loss for Irrlicht.
+    /// </summary>
+    void Yield();
 
-	property Video::ColorFormat ColorFormat { Video::ColorFormat get(); }
-	property GUI::CursorControl^ CursorControl { GUI::CursorControl^ get(); }
-	property IO::FileSystem^ FileSystem { IO::FileSystem^ get(); }
-	property bool Fullscreen { bool get(); }
-	property GUI::GUIEnvironment^ GUIEnvironment { GUI::GUIEnvironment^ get(); }
-	property IrrlichtNetCore::Logger^ Logger { IrrlichtNetCore::Logger^ get(); }
-	property IrrlichtNetCore::OSOperator^ OSOperator { IrrlichtNetCore::OSOperator^ get(); }
-	property IrrlichtNetCore::Randomizer^ Randomizer { IrrlichtNetCore::Randomizer^ get(); void set(IrrlichtNetCore::Randomizer^ value); }
-	property Scene::SceneManager^ SceneManager { Scene::SceneManager^ get(); }
-	property IrrlichtNetCore::Timer^ Timer { IrrlichtNetCore::Timer^ get(); }
-	property DeviceType Type { DeviceType get(); }
-	property String^ Version { String^ get(); }
-	property Video::VideoDriver^ VideoDriver { Video::VideoDriver^ get(); }
-	property Video::VideoModeList^ VideoModeList { Video::VideoModeList^ get(); }
-	property bool WindowActive { bool get(); }
-	property bool WindowFocused { bool get(); }
-	property bool WindowMinimized { bool get(); }
-	property Vector2Di^ WindowPosition { Vector2Di^ get(); }
+    property Video::ColorFormat ColorFormat { Video::ColorFormat get(); }
+    property GUI::CursorControl^ CursorControl { GUI::CursorControl^ get(); }
+    property IO::FileSystem^ FileSystem { IO::FileSystem^ get(); }
+    property bool Fullscreen { bool get(); }
+    property GUI::GUIEnvironment^ GUIEnvironment { GUI::GUIEnvironment^ get(); }
+    property IrrlichtNetCore::Logger^ Logger { IrrlichtNetCore::Logger^ get(); }
+    property IrrlichtNetCore::OSOperator^ OSOperator { IrrlichtNetCore::OSOperator^ get(); }
+    property IrrlichtNetCore::Randomizer^ Randomizer { IrrlichtNetCore::Randomizer^ get(); void set(IrrlichtNetCore::Randomizer^ value); }
+    property Scene::SceneManager^ SceneManager { Scene::SceneManager^ get(); }
+    property IrrlichtNetCore::Timer^ Timer { IrrlichtNetCore::Timer^ get(); }
+    property DeviceType Type { DeviceType get(); }
+    property String^ Version { String^ get(); }
+    property Video::VideoDriver^ VideoDriver { Video::VideoDriver^ get(); }
+    property Video::VideoModeList^ VideoModeList { Video::VideoModeList^ get(); }
+    property bool WindowActive { bool get(); }
+    property bool WindowFocused { bool get(); }
+    property bool WindowMinimized { bool get(); }
+    property Vector2Di^ WindowPosition { Vector2Di^ get(); }
 
-	virtual String^ ToString() override;
+    virtual String^ ToString() override;
 
-	delegate bool EventHandler(IrrlichtNetCore::Event^ evnt);
-	event EventHandler^ OnEvent;
+    delegate bool EventHandler(IrrlichtNetCore::Event^ evnt);
+    event EventHandler^ OnEvent;
 
 internal:
 
-	static IrrlichtDevice^ Wrap(irr::IrrlichtDevice* ref);
-	IrrlichtDevice(irr::IrrlichtDevice* ref);
+    static IrrlichtDevice^ Wrap(irr::IrrlichtDevice* ref);
+    IrrlichtDevice(irr::IrrlichtDevice* ref);
 
-	bool Event(IrrlichtNetCore::Event^ e);
+    bool Event(IrrlichtNetCore::Event^ e);
 
-	irr::IrrlichtDevice* m_IrrlichtDevice;
-	EventReceiverInheritor* m_EventReceiverInheritor;
+    irr::IrrlichtDevice* m_IrrlichtDevice;
+    EventReceiverInheritor* m_EventReceiverInheritor;
 };
 
 } // end namespace IrrlichtNetCore

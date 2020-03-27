@@ -14,19 +14,19 @@ public ref class VideoModeList : ReferenceCounted
 {
 public:
 
-	Dimension2Di^ GetResolution(Dimension2Di^ minSize, Dimension2Di^ maxSize);
+    Dimension2Di^ GetResolution(Dimension2Di^ minSize, Dimension2Di^ maxSize);
 
-	property VideoMode Desktop { VideoMode get(); }
-	property List<VideoMode>^ ModeList { List<VideoMode>^ get(); }
+    property VideoMode Desktop { VideoMode get(); }
+    property List<VideoMode>^ ModeList { List<VideoMode>^ get(); }
 
-	virtual String^ ToString() override;
+    virtual String^ ToString() override;
 
 internal:
 
-	static VideoModeList^ Wrap(video::IVideoModeList* ref);
-	VideoModeList(video::IVideoModeList* ref);
+    static VideoModeList^ Wrap(video::IVideoModeList* ref);
+    VideoModeList(video::IVideoModeList* ref);
 
-	video::IVideoModeList* m_VideoModeList;
+    video::IVideoModeList* m_VideoModeList;
 };
 
 } // end namespace Video

@@ -5,9 +5,9 @@ namespace GraphicsTemplate.Client
 {
     public partial class ShellView : Window
     {
-		public ShellView()
+        public ShellView()
         {
             InitializeComponent();
-		}
-	}
+        }
+    }
 }

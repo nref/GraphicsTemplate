@@ -9,58 +9,58 @@ namespace Scene {
 
 CameraMayaSceneNodeAnimator^ CameraMayaSceneNodeAnimator::Wrap(scene::ISceneNodeAnimatorCameraMaya* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew CameraMayaSceneNodeAnimator(ref);
+    return gcnew CameraMayaSceneNodeAnimator(ref);
 }
 
 CameraMayaSceneNodeAnimator::CameraMayaSceneNodeAnimator(scene::ISceneNodeAnimatorCameraMaya* ref)
-	: SceneNodeAnimator(ref)
+    : SceneNodeAnimator(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_CameraMayaSceneNodeAnimator = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_CameraMayaSceneNodeAnimator = ref;
 }
 
 float CameraMayaSceneNodeAnimator::Distance::get()
 {
-	return m_CameraMayaSceneNodeAnimator->getDistance();
+    return m_CameraMayaSceneNodeAnimator->getDistance();
 }
 
 void CameraMayaSceneNodeAnimator::Distance::set(float value)
 {
-	LIME_ASSERT(value > 0.0f);
-	m_CameraMayaSceneNodeAnimator->setDistance(value);
+    LIME_ASSERT(value > 0.0f);
+    m_CameraMayaSceneNodeAnimator->setDistance(value);
 }
 
 float CameraMayaSceneNodeAnimator::MoveSpeed::get()
 {
-	return m_CameraMayaSceneNodeAnimator->getMoveSpeed();
+    return m_CameraMayaSceneNodeAnimator->getMoveSpeed();
 }
 
 void CameraMayaSceneNodeAnimator::MoveSpeed::set(float value)
 {
-	m_CameraMayaSceneNodeAnimator->setMoveSpeed(value);
+    m_CameraMayaSceneNodeAnimator->setMoveSpeed(value);
 }
 
 float CameraMayaSceneNodeAnimator::RotateSpeed::get()
 {
-	return m_CameraMayaSceneNodeAnimator->getRotateSpeed();
+    return m_CameraMayaSceneNodeAnimator->getRotateSpeed();
 }
 
 void CameraMayaSceneNodeAnimator::RotateSpeed::set(float value)
 {
-	m_CameraMayaSceneNodeAnimator->setRotateSpeed(value);
+    m_CameraMayaSceneNodeAnimator->setRotateSpeed(value);
 }
 
 float CameraMayaSceneNodeAnimator::ZoomSpeed::get()
 {
-	return m_CameraMayaSceneNodeAnimator->getZoomSpeed();
+    return m_CameraMayaSceneNodeAnimator->getZoomSpeed();
 }
 
 void CameraMayaSceneNodeAnimator::ZoomSpeed::set(float value)
 {
-	m_CameraMayaSceneNodeAnimator->setZoomSpeed(value);
+    m_CameraMayaSceneNodeAnimator->setZoomSpeed(value);
 }
 
 } // end namespace Scene

@@ -11,32 +11,32 @@ namespace Video {
 
 MaterialRenderer^ MaterialRenderer::Wrap(video::IMaterialRenderer* ref)
 {
-	if (ref == nullptr)
-		return nullptr;
+    if (ref == nullptr)
+        return nullptr;
 
-	return gcnew MaterialRenderer(ref);
+    return gcnew MaterialRenderer(ref);
 }
 
 MaterialRenderer::MaterialRenderer(video::IMaterialRenderer* ref)
-	: ReferenceCounted(ref)
+    : ReferenceCounted(ref)
 {
-	LIME_ASSERT(ref != nullptr);
-	m_MaterialRenderer = ref;
+    LIME_ASSERT(ref != nullptr);
+    m_MaterialRenderer = ref;
 }
 
 int MaterialRenderer::Capability::get()
 {
-	return m_MaterialRenderer->getRenderCapability();
+    return m_MaterialRenderer->getRenderCapability();
 }
 
 bool MaterialRenderer::Transparent::get()
 {
-	return m_MaterialRenderer->isTransparent();
+    return m_MaterialRenderer->isTransparent();
 }
 
 String^ MaterialRenderer::ToString()
 {
-	return String::Format("MaterialRenderer: Capability={0}", Capability);
+    return String::Format("MaterialRenderer: Capability={0}", Capability);
 }
 
 } // end namespace Video

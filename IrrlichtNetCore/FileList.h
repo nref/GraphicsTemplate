@@ -14,31 +14,31 @@ public ref class FileList : ReferenceCounted
 {
 public:
 
-	int AddFile(String^ fullPath, int offset, int size, bool isDirectory, int id);
-	int AddFile(String^ fullPath, int offset, int size, bool isDirectory);
+    int AddFile(String^ fullPath, int offset, int size, bool isDirectory, int id);
+    int AddFile(String^ fullPath, int offset, int size, bool isDirectory);
 
-	int FindFile(String^ filename, bool isDirectory);
-	int FindFile(String^ filename);
+    int FindFile(String^ filename, bool isDirectory);
+    int FindFile(String^ filename);
 
-	int GetFileID(int index);
-	String^ GetFileName(int index);
-	int GetFileOffset(int index);
-	int GetFileSize(int index);
-	String^ GetFullFileName(int index);
+    int GetFileID(int index);
+    String^ GetFileName(int index);
+    int GetFileOffset(int index);
+    int GetFileSize(int index);
+    String^ GetFullFileName(int index);
 
-	bool IsDirectory(int index);
+    bool IsDirectory(int index);
 
-	void Sort();
+    void Sort();
 
-	property int Count { int get(); }
-	property String^ Path { String^ get(); }
+    property int Count { int get(); }
+    property String^ Path { String^ get(); }
 
 internal:
 
-	static FileList^ Wrap(io::IFileList* ref);
-	FileList(io::IFileList* ref);
+    static FileList^ Wrap(io::IFileList* ref);
+    FileList(io::IFileList* ref);
 
-	io::IFileList* m_FileList;
+    io::IFileList* m_FileList;
 };
 
 } // end namespace IO

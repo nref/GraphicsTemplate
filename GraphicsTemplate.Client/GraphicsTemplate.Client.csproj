@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GraphicsTemplate.Graphics\GraphicsTemplate.Graphics.csproj" />
+    <ProjectReference Include="..\GraphicsTemplate.Irrlicht\GraphicsTemplate.Irrlicht.csproj" />
+    <ProjectReference Include="..\GraphicsTemplate.Urho\GraphicsTemplate.Urho.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

@@ -4,9 +4,9 @@ namespace GraphicsTemplate.Client
 {
     public partial class GraphicsView : ContentControl
     {
-		public GraphicsView()
+        public GraphicsView()
         {
             InitializeComponent();
-		}
-	}
+        }
+    }
 }

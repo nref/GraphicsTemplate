@@ -14,15 +14,15 @@ public ref class ParticleFadeOutAffector : ParticleAffector
 {
 public:
 
-	property int FadeOutTime { int get(); void set(int value); }
-	property Video::Color^ TargetColor { Video::Color^ get(); void set(Video::Color^ value); }
+    property int FadeOutTime { int get(); void set(int value); }
+    property Video::Color^ TargetColor { Video::Color^ get(); void set(Video::Color^ value); }
 
 internal:
 
-	static ParticleFadeOutAffector^ Wrap(scene::IParticleFadeOutAffector* ref);
-	ParticleFadeOutAffector(scene::IParticleFadeOutAffector* ref);
+    static ParticleFadeOutAffector^ Wrap(scene::IParticleFadeOutAffector* ref);
+    ParticleFadeOutAffector(scene::IParticleFadeOutAffector* ref);
 
-	scene::IParticleFadeOutAffector* m_ParticleFadeOutAffector;
+    scene::IParticleFadeOutAffector* m_ParticleFadeOutAffector;
 };
 
 } // end namespace Scene
