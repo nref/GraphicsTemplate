@@ -1,8 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using Urho;
 using Urho.Gui;
 using Urho.Shapes;
 using Application = Urho.Application;
+using UnhandledExceptionEventArgs = Urho.UnhandledExceptionEventArgs;
 using HorizontalAlignment = Urho.Gui.HorizontalAlignment;
 using VerticalAlignment = Urho.Gui.VerticalAlignment;
 
@@ -10,11 +12,14 @@ namespace GraphicsTemplate.Urho
 {
     public class UrhoApp : Application
     {
+        private Vector3 _cameraTarget = new Vector3();
+        private Vector3 _cameraPosition = new Vector3();
         private Node _cameraNode;
         private Camera _camera;
-        private float _cameraYaw;
-        private float _cameraPitch;
-        private const float _mouseSensitivity = .1f;
+        private ArcBall _arcBall;
+        private Scene _scene;
+        private bool MouseLeft => Input.GetMouseButtonDown(MouseButton.Left);
+        private bool MouseRight => Input.GetMouseButtonDown(MouseButton.Right);
 
         public UrhoApp(ApplicationOptions options) : base(options)
         {
@@ -26,14 +31,11 @@ namespace GraphicsTemplate.Urho
         protected override void Start()
         {
             base.Start();
+            _arcBall = new ArcBall(Input, Graphics);
+            Graphics.LineAntiAlias = true;
 
-            Show("UrhoGraphicsService");
+            ShowText("Graphics Template");
             CreateScene();
-
-            Engine.PostUpdate += args =>
-            {
-
-            };
 
             Input.Enabled = true;
             Input.KeyDown += HandleKeyDown;
@@ -43,20 +45,37 @@ namespace GraphicsTemplate.Urho
         {
             base.OnUpdate(timeStep);
 
-            if (!Input.GetMouseButtonDown(MouseButton.Left))
+            if (MouseLeft)
             {
-                return;
-            }    
+                _cameraNode.Position = _arcBall.Rotate(_cameraNode.Position);
+                _cameraNode.LookAt(_cameraTarget, new Vector3(0, 1, 0));
+            }
 
-            var mouseMove = Input.MouseMove;
-            _cameraYaw += _mouseSensitivity * mouseMove.X;
-            _cameraPitch += _mouseSensitivity * mouseMove.Y;
-            _cameraPitch = MathHelper.Clamp(_cameraPitch, -90, 90);
+            if (MouseRight)
+            {
+                var mouseMove = new Vector3
+                (
+                    -(float)Input.MouseMove.X / 100,
+                    (float)Input.MouseMove.Y / 100, 
+                    0
+                );
 
-            _cameraNode.Rotation = new Quaternion(_cameraPitch, _cameraYaw, 0);
+                _cameraNode.Position += _cameraNode.Rotation * mouseMove;
+                _cameraTarget += _cameraNode.Rotation * mouseMove;
+            }
+
+            if (Input.MouseMoveWheel != 0)
+            {
+                int sign = Math.Sign(Input.MouseMoveWheel);
+
+                float ratio = 1.05f;
+                ratio = sign > 0 ? ratio : 1 / ratio;
+
+                _camera.Fov = ratio * _camera.Fov;
+            }
         }
 
-        protected void Show(string text = "")
+        protected void ShowText(string text = "")
         {
             var textElement = new Text
             {
@@ -70,38 +89,81 @@ namespace GraphicsTemplate.Urho
 
         private void CreateScene()
         {
-            // 3D scene with Octree
-            var scene = new Scene(Context);
-            scene.CreateComponent<Octree>();
+            _scene = new Scene(Context);
+            _scene.CreateComponent<Octree>();
 
-            Node boxNode = scene.CreateChild();
+            // Box
+            Node boxNode = _scene.CreateChild();
             boxNode.SetScale(1f);
             var box = boxNode.CreateComponent<Box>();
             box.Color = Color.White;
+            Material mat = box.GetMaterial(0);
+            mat.SetTechnique(0, CoreAssets.Techniques.NoTextureVCol, 1, 1);
+            box.SetMaterial(mat);
 
-            Node boxNode2 = scene.CreateChild();
+            // Wireframe for box
+            Node boxNode2 = _scene.CreateChild();
             boxNode2.SetScale(0.95f);
             var box2 = boxNode.CreateComponent<Box>();
             box2.Color = Color.Black;
-            Material mat = box2.GetMaterial(0);
-            mat.FillMode = FillMode.Wireframe;
-            mat.LineAntiAlias = true;
+            Material mat2 = box2.GetMaterial(0);
+            mat2.FillMode = FillMode.Wireframe;
+            mat2.LineAntiAlias = true;
 
             // Light
-            Node lightNode = scene.CreateChild(name: "light");
-            var light = lightNode.CreateComponent<Light>();
-            light.LightType = LightType.Point;
-            light.Range = 50;
+            Node zoneNode = _scene.CreateChild();
+            var zone = zoneNode.CreateComponent<Zone>();
+            zone.SetBoundingBox(new BoundingBox(-10000.0f, 10000.0f));
+            zone.AmbientColor = new Color(1, 1, 1);
+
+            DrawFrame();
 
             // Camera
-            _cameraNode = scene.CreateChild(name: "camera");
-            _cameraNode.Position = new Vector3(0, 1, -5);
-            _cameraNode.LookAt(boxNode.Position, new Vector3());
-
+            _cameraNode = _scene.CreateChild();
             _camera = _cameraNode.CreateComponent<Camera>();
+            ResetCamera();
 
             // Viewport
-            Renderer.SetViewport(0, new Viewport(Context, scene, _camera, null));
+            var viewport = new Viewport(Context, _scene, _camera, null);
+            var sky = Color.FromByteFormat(65, 156, 211, 255);
+            viewport.SetClearColor(sky);
+            Renderer.SetViewport(0, viewport);
+        }
+
+        private void DrawFrame()
+        {
+            float size = 1;
+
+            DrawLine(Vector3.Zero, Vector3.UnitX * size, Color.Red);
+            DrawLine(Vector3.Zero, Vector3.UnitY * size, Color.Green);
+            DrawLine(Vector3.Zero, Vector3.UnitZ * size, Color.Blue);
+        }
+
+        private void DrawLine(Vector3 start, Vector3 end, Color color)
+        {
+            Node node = _scene.CreateChild();
+            CustomGeometry geom = node.CreateComponent<CustomGeometry>();
+            geom.BeginGeometry(0, PrimitiveType.LineList);
+            var mat = new Material();
+            mat.SetTechnique(0, CoreAssets.Techniques.NoTextureUnlitVCol, 1, 1);
+            mat.LineAntiAlias = true;
+
+            geom.SetMaterial(mat);
+
+            geom.DefineVertex(start);
+            geom.DefineColor(color);
+            geom.DefineVertex(end);
+            geom.DefineColor(color);
+
+            geom.Commit();
+        }
+
+        private void ResetCamera()
+        {
+            _cameraPosition = new Vector3(5, 5, 5);
+            _cameraTarget = new Vector3();
+            _cameraNode.Position = _cameraPosition;
+            _cameraNode.LookAt(_cameraTarget, new Vector3(0, 1, 0));
         }
 
         private void HandleException(object sender, UnhandledExceptionEventArgs e)
@@ -115,6 +177,12 @@ namespace GraphicsTemplate.Urho
 
         private void HandleKeyDown(KeyDownEventArgs e)
         {
+            switch (e.Key)
+            {
+                case Key.Space:
+                    ResetCamera();
+                    break;
+            }
         }
     }
 }

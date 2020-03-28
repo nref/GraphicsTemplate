@@ -16,8 +16,8 @@ namespace GraphicsTemplate.Client
         protected override void ConfigureIoC(IStyletIoCBuilder builder)
         {
             builder.Bind<IGraphicsViewModel>().To<GraphicsViewModel>().InSingletonScope();
-            builder.Bind<IGraphicsService>().To<IrrlichtGraphicsService>().InSingletonScope();
-            //builder.Bind<IGraphicsService>().To<UrhoGraphicsSevice>().InSingletonScope();
+            //builder.Bind<IGraphicsService>().To<IrrlichtGraphicsService>().InSingletonScope();
+            builder.Bind<IGraphicsService>().To<UrhoGraphicsSevice>().InSingletonScope();
         }
 
         protected override void Configure()

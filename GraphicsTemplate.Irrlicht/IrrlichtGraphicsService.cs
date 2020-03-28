@@ -53,6 +53,7 @@ namespace GraphicsTemplate.Irrlicht
             _device.OnEvent += new IrrlichtDevice.EventHandler(HandleDeviceEvent);
 
             _cam = AddCamera();
+            ResetCamera();
             _lights = AddLights();
 
             var texture = _driver.GetTexture($"{_path}/blue.png");
@@ -67,12 +68,7 @@ namespace GraphicsTemplate.Irrlicht
 
         private CameraSceneNode AddCamera()
         {
-            var cam = _smgr.AddCameraSceneNodeMaya(null, -150, 150, 15);
-            cam.Target = new Vector3Df(0);
-            cam.Position = new Vector3Df(5, 5, 5);
-            cam.FOV = (float)Math.PI / 32;
-            cam.NearValue = 0.5f;
-            return cam;
+            return _smgr.AddCameraSceneNodeMaya(null, -150, 150, 15);
         }
 
         private List<LightSceneNode> AddLights()
@@ -158,6 +154,14 @@ namespace GraphicsTemplate.Irrlicht
             _driver.Draw3DLine(line, color);
         }
 
+        private void ResetCamera()
+        {
+            _cam.Target = new Vector3Df(0);
+            _cam.Position = new Vector3Df(5, 5, 5);
+            _cam.FOV = (float)Math.PI / 32;
+            _cam.NearValue = 0.5f;
+        }
+
         public void Close()
         {
             if (_device == null)
@@ -192,6 +196,7 @@ namespace GraphicsTemplate.Irrlicht
                 switch (e.Key.Key)
                 {
                     case KeyCode.Space:
+                        ResetCamera();
                         break;
                 }
             }

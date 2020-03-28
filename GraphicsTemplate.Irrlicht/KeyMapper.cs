@@ -14,7 +14,14 @@ namespace GraphicsTemplate.Irrlicht
                 return (KeyCode)(key - diff);
             }
 
-            return KeyCode.None;
+            switch (key)
+            {
+                case Key.Space:
+                    return KeyCode.Space;
+
+                default:
+                    return KeyCode.None;
+            }
         }
     }
 }
