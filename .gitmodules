@@ -1,0 +1,3 @@
+[submodule "Irrlicht.NetCore"]
+	path = Irrlicht.NetCore
+	url = https://github.com/slater1/Irrlicht.NetCore
