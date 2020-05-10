@@ -29,6 +29,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GraphicsTemplate.Domain\GraphicsTemplate.Domain.csproj" />
+    <ProjectReference Include="..\GraphicsTemplate.Models\GraphicsTemplate.Models.csproj" />
     <ProjectReference Include="..\GraphicsTemplate.Shared\GraphicsTemplate.Shared.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,7 @@
-﻿using GraphicsTemplate.Irrlicht;
+﻿using GraphicsTemplate.Api;
 using GraphicsTemplate.Shared;
 using Stylet;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace GraphicsTemplate.Client
@@ -19,11 +20,14 @@ namespace GraphicsTemplate.Client
     public class GraphicsViewModel : Screen, IGraphicsViewModel
     {
         public IGraphicsViewModel Graphics { get; private set; }
-        private readonly IGraphicsService _service;
+        private readonly IGraphicsAdapter _service;
+        private readonly IGraphicsApi _api;
 
-        public GraphicsViewModel(IGraphicsService service)
+        public GraphicsViewModel(IGraphicsAdapter service, IGraphicsApi api)
         {
             _service = service;
+            _api = api;
+            Task.Run(() => _api.Run());
         }
 
         public void HandleKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
