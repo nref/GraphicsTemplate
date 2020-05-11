@@ -1,6 +1,5 @@
 ﻿using GraphicsTemplate.Adapters;
 using GraphicsTemplate.Adapters.Irrlicht;
-using GraphicsTemplate.Adapters.Urho;
 using GraphicsTemplate.ApplicationServices;
 using Lamar;
 
@@ -28,7 +27,6 @@ namespace GraphicsTemplate.Infrastructure
                 });
 
                 var graphics = new IrrlichtGraphicsAdapter(@"C:\Users\DougSlater\GraphicsTemplate\resources");
-                //var graphics = new UrhoGraphicsAdapter();
 
                 registry.For<IGraphicsAdapter>().Use(graphics);
                 registry.For<IGraphicsService>().Use<GraphicsService>();

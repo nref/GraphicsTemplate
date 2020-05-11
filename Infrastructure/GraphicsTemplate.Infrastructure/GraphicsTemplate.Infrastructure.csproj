@@ -12,7 +12,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Application\GraphicsTemplate.ApplicationServices\GraphicsTemplate.ApplicationServices.csproj" />
     <ProjectReference Include="..\GraphicsTemplate.Adapters.Irrlicht\GraphicsTemplate.Adapters.Irrlicht.csproj" />
-    <ProjectReference Include="..\GraphicsTemplate.Adapters.Urho\GraphicsTemplate.Adapters.Urho.csproj" />
   </ItemGroup>
 
 </Project>
