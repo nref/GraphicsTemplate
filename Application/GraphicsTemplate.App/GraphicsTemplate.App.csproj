@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>GraphicsTemplate.App</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Stylet" Version="1.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Api\GraphicsTemplate.Api\GraphicsTemplate.Api.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo xcopy /Y &quot;$(SolutionDir)Infrastructure\GraphicsTemplate.Adapters.Irrlicht\Irrlicht.NetCore\Irrlicht.NetCore\bin\$(PlatformName)\$(ConfigurationName)\Irrlicht.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;xcopy /Y &quot;$(SolutionDir)Infrastructure\GraphicsTemplate.Adapters.Irrlicht\Irrlicht.NetCore\Irrlicht.NetCore\bin\$(PlatformName)\$(ConfigurationName)\Irrlicht.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;&#xD;&#xA;echo xcopy /Y &quot;$(SolutionDir)Infrastructure\GraphicsTemplate.Adapters.Irrlicht\Irrlicht.NetCore\Irrlicht.NetCore\bin\$(PlatformName)\$(ConfigurationName)\Ijwhost.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;xcopy /Y &quot;$(SolutionDir)Infrastructure\GraphicsTemplate.Adapters.Irrlicht\Irrlicht.NetCore\Irrlicht.NetCore\bin\$(PlatformName)\$(ConfigurationName)\Ijwhost.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;" />
+  </Target>
+
+</Project>

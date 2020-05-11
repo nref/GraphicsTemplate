@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lamar" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\GraphicsTemplate.ApplicationServices\GraphicsTemplate.ApplicationServices.csproj" />
+    <ProjectReference Include="..\GraphicsTemplate.Adapters.Irrlicht\GraphicsTemplate.Adapters.Irrlicht.csproj" />
+    <ProjectReference Include="..\GraphicsTemplate.Adapters.Urho\GraphicsTemplate.Adapters.Urho.csproj" />
+  </ItemGroup>
+
+</Project>
