@@ -1,3 +1,0 @@
-[submodule "Irrlicht.NetCore"]
-	path = Infrastructure/GraphicsTemplate.Adapters.Irrlicht/Irrlicht.NetCore
-	url = https://github.com/slater1/Irrlicht.NetCore

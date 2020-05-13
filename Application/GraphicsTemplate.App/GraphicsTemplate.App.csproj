@@ -16,8 +16,4 @@
     <ProjectReference Include="..\..\Api\GraphicsTemplate.Api\GraphicsTemplate.Api.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="echo xcopy /Y &quot;$(SolutionDir)Infrastructure\GraphicsTemplate.Adapters.Irrlicht\Irrlicht.NetCore\Irrlicht.NetCore\bin\$(PlatformName)\$(ConfigurationName)\Irrlicht.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;xcopy /Y &quot;$(SolutionDir)Infrastructure\GraphicsTemplate.Adapters.Irrlicht\Irrlicht.NetCore\Irrlicht.NetCore\bin\$(PlatformName)\$(ConfigurationName)\Irrlicht.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;&#xD;&#xA;echo xcopy /Y &quot;$(SolutionDir)Infrastructure\GraphicsTemplate.Adapters.Irrlicht\Irrlicht.NetCore\Irrlicht.NetCore\bin\$(PlatformName)\$(ConfigurationName)\Ijwhost.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;xcopy /Y &quot;$(SolutionDir)Infrastructure\GraphicsTemplate.Adapters.Irrlicht\Irrlicht.NetCore\Irrlicht.NetCore\bin\$(PlatformName)\$(ConfigurationName)\Ijwhost.dll&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;" />
-  </Target>
-
 </Project>

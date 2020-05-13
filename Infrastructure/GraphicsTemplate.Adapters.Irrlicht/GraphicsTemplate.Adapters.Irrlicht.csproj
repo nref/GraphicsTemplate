@@ -8,26 +8,13 @@
     <RootNamespace>GraphicsTemplate.Adapters.Irrlicht</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <Reference Include="Irrlicht.NetCore">
-      <HintPath>..\Irrlicht.NetCore\Irrlicht.NetCore\bin\x64\Debug\Irrlicht.NetCore.dll</HintPath>
-    </Reference>
+  <ItemGroup>
+    <PackageReference Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Include="Irrlicht.NetCore.x64" Version="3.1.0" />
+    <PackageReference Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Include="Irrlicht.NetCore.x64" Version="3.1.0" />
+    <PackageReference Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'" Include="Irrlicht.NetCore.x86" Version="3.1.0" />
+    <PackageReference Condition="'$(Configuration)|$(Platform)' == 'Release|x86'" Include="Irrlicht.NetCore.x86" Version="3.1.0" />
   </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <Reference Include="Irrlicht.NetCore">
-      <HintPath>..\Irrlicht.NetCore\Irrlicht.NetCore\bin\x64\Release\Irrlicht.NetCore.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <Reference Include="Irrlicht.NetCore">
-      <HintPath>..\Irrlicht.NetCore\Irrlicht.NetCore\bin\x86\Debug\Irrlicht.NetCore.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <Reference Include="Irrlicht.NetCore">
-      <HintPath>..\Irrlicht.NetCore\Irrlicht.NetCore\bin\x86\Release\Irrlicht.NetCore.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\GraphicsTemplate.Adapters\GraphicsTemplate.Adapters.csproj" />
     <ProjectReference Include="..\..\Core\GraphicsTemplate.Domain\GraphicsTemplate.Domain.csproj" />
