@@ -1,8 +1,8 @@
-﻿using IrrlichtNetCore;
-using IrrlichtNetCore.Core;
-using IrrlichtNetCore.Video;
-using IrrlichtNetCore.Scene;
-using IrrlichtNetCore.GUI;
+﻿using Irrlicht;
+using Irrlicht.Core;
+using Irrlicht.Video;
+using Irrlicht.Scene;
+using Irrlicht.GUI;
 using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -66,7 +66,7 @@ namespace GraphicsTemplate.Adapters.Irrlicht
             var texture = _driver.GetTexture($"{_path}/blue.png");
             _smgr.AddSkyBoxSceneNode(texture, texture, texture, texture, texture, texture);
 
-            _gui.AddImage(_driver.GetTexture($"{_path}/logo.png"), new Vector2Di(0, 10));
+            //_gui.AddImage(_driver.GetTexture($"{_path}/logo.png"), new Vector2Di(0, 10));
 
             Task.Run(() => AddMeshes(new[] {
                 $"{_path}/box.obj",

@@ -1,5 +1,5 @@
 ﻿using GraphicsTemplate.Models;
-using IrrlichtNetCore;
+using Irrlicht;
 
 namespace GraphicsTemplate.Adapters.Irrlicht
 {

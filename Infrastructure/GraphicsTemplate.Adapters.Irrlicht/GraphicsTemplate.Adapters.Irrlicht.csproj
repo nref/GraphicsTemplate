@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>x64;x86</Platforms>
     <AssemblyName>GraphicsTemplate.Adapters.Irrlicht</AssemblyName>
@@ -9,16 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Include="Irrlicht.NetCore.x64" Version="3.1.0" />
+    <!--<PackageReference Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Include="Irrlicht.NetCore.x64" Version="3.1.0" />-->
     <PackageReference Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Include="Irrlicht.NetCore.x64" Version="3.1.0" />
     <PackageReference Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'" Include="Irrlicht.NetCore.x86" Version="3.1.0" />
     <PackageReference Condition="'$(Configuration)|$(Platform)' == 'Release|x86'" Include="Irrlicht.NetCore.x86" Version="3.1.0" />
   </ItemGroup>
-  
+ 
   <ItemGroup>
     <ProjectReference Include="..\GraphicsTemplate.Adapters\GraphicsTemplate.Adapters.csproj" />
     <ProjectReference Include="..\..\Core\GraphicsTemplate.Domain\GraphicsTemplate.Domain.csproj" />
     <ProjectReference Include="..\..\Core\GraphicsTemplate.Models\GraphicsTemplate.Models.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Irrlicht.NetCore">
+      <HintPath>..\..\..\Irrlicht.Net\Irrlicht.NetCore\bin\x64\Release\Irrlicht.NetCore.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
